@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.avif": "plaintext"
+  },
+  "search.exclude": {
+    "**/resources/**": true
+  }
+}
