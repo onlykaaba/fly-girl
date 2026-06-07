@@ -11,7 +11,7 @@ html{ scroll-behavior:smooth; }
   --header-h: 120px;           /* adjust once */
   --bg: #FAF4EF;
   --ink: #496C75;
-  --muted: #585756;
+  --muted: #22424B;
   --pink: #F4A7C1;
   --nav-bar:#F5EEA6;
 }
@@ -22,6 +22,7 @@ body{
   margin: 0;
   display: flex;
   flex-direction: column;
+  color: var(--muted);
 }
 
 
@@ -157,6 +158,9 @@ button, .btn{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+ 
+  
 }
 
 section{
@@ -170,9 +174,14 @@ section{
   background: url("/resources/hero.jpg") center / cover no-repeat;
   background-attachment: fixed;
   display: flex;
-  align-items: center;
- 
+}
 
+.landingPage .container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 4rem;
 }
 
 .heroText1{
@@ -183,7 +192,7 @@ section{
   transition: opacity 0.7s ease, transform 0.7s ease;
   color: var(--bg);
   height: fit-content;
-  padding: 1rem;
+ 
   
   
 }
@@ -200,10 +209,12 @@ section{
 /* About */
 
 
-.about-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  
+.about-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 article{
   
@@ -216,24 +227,34 @@ article{
 .card{
   background:#fff;
   border-radius: 12px;
+  display:flex;
+  flex-direction: column;
   
   
 }
 .card div{
   border-radius: 12px 12px 0 0;
   overflow:hidden;
-  height: 80%;
+  height: fit-content;
   
 }
 
-.card div img{
+.card img{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  height: 200px;
+  /* object-fit:cover; */
+
 }
 
+
+
 .cardsGrid{
-  display:grid;
+  /* display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+   */
+   width: 100%;
+   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
  
