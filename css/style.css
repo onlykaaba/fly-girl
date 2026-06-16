@@ -17,12 +17,17 @@ html{ scroll-behavior:smooth; }
 }
 
 
+
+
+
 body{
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Serif Display', serif;
   margin: 0;
   display: flex;
   flex-direction: column;
   color: var(--muted);
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -38,14 +43,30 @@ li{
 
 /* Universal container = width + padding only */
 
-h1{
-  font-size: clamp(2rem, 5vw, 4rem);;
-  
+h1 {
+  font-size: 96px;
+  letter-spacing: -1.5px;
+  font-family: 'DM Serif Display', serif;
+  margin: 0;
+}
+
+h2{
+  font-size: 60px;
+  letter-spacing: -0.5px;
+  font-family: 'DM Serif Display', serif;
+}
+
+h3{
+  font-size: 48px;
+  letter-spacing: 0px;
+  font-family: 'DM Serif Display', serif;
+
 }
 
 p{
-  font-size: clamp(1rem, 1.2vw, 1rem);
-  line-height:1.6;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-family: 'manrope', sans-serif;
   
  
 }
@@ -70,6 +91,11 @@ img{
 .topPink{
   background: var(--pink);
   padding: 0.25rem 0.5rem;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+
   
 }
 
@@ -77,6 +103,7 @@ img{
 
 .header-top{
   display:flex;
+  width: 100%;
   flex-direction: row;
   justify-content:space-between;
   align-items:center;
@@ -170,7 +197,7 @@ section{
 /* Hero */
 
 .landingPage{
-  height: 90vh;
+  height: 80vh;
   background: url("/resources/hero.jpg") center / cover no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -182,25 +209,22 @@ section{
   justify-content: flex-start;
   align-items: flex-end;
   padding-bottom: 4rem;
+  /* width: 50%; */
 }
 
-.heroText1{
-  
-  
+.heroText1 {
   opacity: 0;
   transform: translateY(80px);
   transition: opacity 0.7s ease, transform 0.7s ease;
   color: var(--bg);
-  height: fit-content;
- 
-  
+  /* width: 60%; */
   
 }
 
 .heroText1.show{
   opacity: 1;
   transform: translateY(0);
-  width: clamp(300px, 80vw, 600px);
+ 
 }
 
 
