@@ -10,8 +10,10 @@ html{ scroll-behavior:smooth; }
 :root{
   --header-h: 120px;           /* adjust once */
   --bg: #FAF4EF;
+  --bg2: #faf4efde;
   --ink: #496C75;
   --muted: #22424B;
+  --muted2: #22424B99;
   --pink: #F4A7C1;
   --nav-bar:#F5EEA6;
 }
@@ -48,6 +50,8 @@ h1 {
   letter-spacing: -1.5px;
   font-family: 'DM Serif Display', serif;
   margin: 0;
+  color: var(--bg);
+  
 }
 
 h2{
@@ -67,11 +71,17 @@ p{
   font-size: 16px;
   letter-spacing: 0.5px;
   font-family: 'manrope', sans-serif;
+  width: 100%;
+  color: var(--bg2);
   
  
 }
 
 a{ text-decoration:none; color:inherit; }
+
+li a{
+  transition: color .25s ease;
+}
 
 img{
   max-width:100%;
@@ -169,7 +179,7 @@ input[type="search"], input[type="text"], input[type="email"], textarea{
 }
 
 button, .btn{
-  background: var(--pink);
+  background: var(--muted);
   color:#fff;
   border:0;
   border-radius: 8px;
@@ -177,7 +187,12 @@ button, .btn{
   font-size: 1rem;
   cursor:pointer;
   display:inline-block;
-  margin-top: 1rem;
+  
+}
+button:hover, .btn:hover{
+  background: var(--pink);
+  color:#fff;
+  transition: background-color .25s ease, color .25s ease;
 }
 
 .container{
@@ -197,33 +212,45 @@ section{
 /* Hero */
 
 .landingPage{
-  height: 80vh;
-  background: url("/resources/hero.jpg") center / cover no-repeat;
+  height: 95vh;
+  background: url("/resources/Close-up\ of\ Lips\ in\ Water.png") center / cover no-repeat;
   background-attachment: fixed;
   display: flex;
+  /* width: 100%;
+  object-fit: cover; */
+  
 }
 
+
 .landingPage .container{
+  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding-bottom: 6rem; */
+ 
+}
+.hero{
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding-bottom: 4rem;
-  /* width: 50%; */
+  flex-direction: column;
+  gap: 1rem;
+  /* width: 60%; */
 }
 
 .heroText1 {
   opacity: 0;
   transform: translateY(80px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  color: var(--bg);
-  /* width: 60%; */
+  width: 100%;
+  
   
 }
 
 .heroText1.show{
   opacity: 1;
   transform: translateY(0);
+  
+ 
  
 }
 
@@ -234,56 +261,72 @@ section{
 
 
 .about-grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-grid div{
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  
+}
+.about-grid img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
 }
 article{
   
   text-align: left;
+ 
+  
 }
 
-
-/* Products grid */
-
-.card{
-  background:#fff;
-  border-radius: 12px;
-  display:flex;
+.heroText{
+  display: flex;
   flex-direction: column;
+  gap: 1rem;
+  width: 100%;
   
   
 }
+.heroText h4{
+  
+  color: var(--muted);
+  
+}
+.heroText p{
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  color: var(--muted2);
+  
+}
+
+
+
+
 .card div{
   border-radius: 12px 12px 0 0;
   overflow:hidden;
   height: fit-content;
   
+  
 }
-
-.card img{
-  width:100%;
-  height: 200px;
-  /* object-fit:cover; */
-
-}
-
-
 
 .cardsGrid{
-  /* display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-   */
-   width: 100%;
-   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
- 
-
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
+
+
+
+
+
+
 
 
 
@@ -322,5 +365,59 @@ footer p{
     flex-direction: column;
     gap:0.5rem;
   }
+  h1{
+    font-size: clamp(4rem, 5vw, 4rem);
+  }
+  .landingPage{
+    height: 90vh;
+  }
+
+
+  /* .landingPage{
+    background: url(/resources/Close-up\ of\ Lips\ in\ Water.png) center / cover no-repeat;
+
+  } */
+
+  .landingPage .container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+    
+  }
+  .about-grid{
+    flex-direction: column;
+  }
+
+  section{
+    padding: 2rem 0;
+  }
+
+
+
+
+}
+
+@media (min-width: 700px) and (max-width: 1300px) {
+
+  
+  .landingPage .container{
+    display: flex;
+    text-align: left;
+    align-self: end;
+    padding-bottom: 4rem;
+
+  }
+  
+  .hero p{
+    width: 80%;
+  } 
+
+  .hamburger{
+    display: none;
+  }
+
+ 
+
+  
 }
 
