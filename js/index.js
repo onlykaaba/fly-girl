@@ -11,10 +11,13 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".heroText1").forEach(el => {
     el.classList.add("show");
   });
 });
+
+
 
 
