@@ -20,4 +20,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+const nav = document.getElementById('navcontainer');
+const toggleBtn = document.getElementById('hamburger');
+
+toggleBtn.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
+
+
 

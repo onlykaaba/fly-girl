@@ -5,6 +5,8 @@
 html{ scroll-behavior:smooth; }
 *{
   box-sizing:border-box;
+  margin: 0;
+  /* border: 1px solid gray; */
 }
 
 :root{
@@ -30,19 +32,19 @@ body{
   color: var(--muted);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 
 ul{
   list-style:none;
-  margin: 0; 
-  
-  
+  margin: 0;
+  padding: 0;
 }
 
 li{
   padding: 8px;
-   font-size: clamp(1rem, 1.2vw, 1.4rem);
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
 }
 
 
@@ -104,8 +106,8 @@ li a{
 .site-header{
   position:sticky;
   top:0;
+  z-index: 1000;
   inset: 0 0 auto 0;
-  z-index:1000;
   height: fit-content; 
   margin: 0;
 }
@@ -118,53 +120,27 @@ li a{
   align-items: center;
 }
 
-.header-top{
-  display:flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items:center;
-  color:#fff;
-}
-
 .search input{
   width: min(420px, 60vw);
 }
 
 .hamburger{
   display: none;
-  flex-direction: column;
-  gap: 5px;
   cursor: pointer;
 }
 
 
+
 /* Nav */
-
-
-nav{
-  width: 100%;
- 
-
-}
-
-.navcontainer{
-  justify-items: flex-end;
-}
-
 
 .navBar{
   display:flex;
-  align-items:center;
   background: transparent;
-  width: 100%;
   transition: background-color .25s ease, box-shadow .25s ease;
-  
 }
 
 
 .navBar.scrolled{
-  
   background: var(--nav-bar);
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
@@ -180,6 +156,9 @@ nav{
 
 
 
+
+
+
 /* button */
 
 button, .btn{
@@ -191,11 +170,13 @@ button, .btn{
   font-size: 1rem;
   cursor:pointer;
   display:inline-block;
+  width: fit-content;
+ 
   
 }
 button:hover, .btn:hover{
   background: var(--pink);
-  color:#fff;
+  color:var(--bg);
   transition: background-color .25s ease, color .25s ease;
 }
 
@@ -203,9 +184,8 @@ button:hover, .btn:hover{
   background: transparent;
   color: var(--muted);
   border: 2px solid var(--muted);
-  width: 100%;
   border-radius: 8px;
-  padding: 12px 24px;
+  padding: 12px 16px;
 
 }
 
@@ -217,8 +197,7 @@ button:hover, .btn:hover{
   width: min(1200px, 90%);
   margin: 0 auto;
   display: flex;
-  flex-direction: column; 
- 
+  flex-direction: column;
 }
 
 section{
@@ -230,29 +209,40 @@ section{
 /* Hero */
 
 .landingPage{
-  height: 90vh;
+  height: 100vh;
   background: url("/resources/Close-up\ of\ Lips\ in\ Water.png") center / cover no-repeat;
   background-attachment: fixed;
   display: flex; 
-  width: 100%;
 }
-
-
-
-
-
 
 .heroText1 {
   opacity: 0;
   transform: translateY(80px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  width: 100%;
+  
 }
 
 .heroText1.show{
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   transform: translateY(0);
 }
+
+.hero-title {
+  /* opacity: 0; */
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.heroText p{
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  color: var(--muted2);
+  
+}
+
+
+
 
 
 
@@ -271,35 +261,26 @@ div img{
   height: auto;
 }
 
-.heroText p{
-  font-size: clamp(1rem, 1.2vw, 1.4rem);
-  color: var(--muted2);
-  
-}
+
 
 /* card component */
 
-.card{
-  background: var(--bg2);
-  border-radius: 12px;
-  padding: 1rem;
-  height: 100%;
- 
-}
 
-article img {
-  width: 100%;
+
+.card img {
   height: 60%;
+  width: 100%;
   object-fit: cover;
+} 
 
-}
+
 
 article p {
   color: var(--ink);
 }
 .cardsGrid{
  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
  gap: 20px;
  
 } 
@@ -336,13 +317,36 @@ footer p{
   .hamburger{
     display: flex;
     cursor: pointer;
+    padding: 1rem;
+  }
+
+  .navcontainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Define your menu width */
+    height: 100%;
+    padding: 1rem;
+    background: var(--bg);
+     /* Move completely off-screen to the left */
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navcontainer.open {
+  /* Slide back into view */
+  transform: translateX(0); 
+  
   }
  
-  .navBar{
-    display: none;
-    
-   
-  }
+ .navBar{
+  display: block;
+  height: 100%;
+  
+ 
+ }
+ 
  
 
 
@@ -365,7 +369,7 @@ footer p{
    flex-direction: column;
    text-align: center;
    justify-content: center;
-   /* position: relative; */
+   position: relative;
     
   }
   .about-grid{
@@ -373,7 +377,11 @@ footer p{
   }
 
   section{
-    padding: 1rem 0;
+    padding: 0;
+  }
+
+  .btn{
+     margin: 0 auto;
   }
 
 
@@ -399,7 +407,8 @@ footer p{
   .hamburger{
     display: none;
   }
- 
+
+
 
 
  
