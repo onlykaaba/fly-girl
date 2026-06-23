@@ -39,7 +39,7 @@ body{
 ul{
   list-style:none;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
 }
 
 li{
@@ -53,10 +53,11 @@ li{
 
 
 h1 {
-  font-size: 96px;
-  letter-spacing: -1.5px;
+  font-size: 100px;
+  letter-spacing: -2px;
+  line-height: normal;
   font-family: 'DM Serif Display', serif;
-  margin: 0;
+  margin-bottom: 1rem;
   color: var(--bg);
  
   
@@ -76,22 +77,39 @@ h3{
 }
 
 h4{
-  margin: 0;
+  font-size: 32px;
+  font-family: 'manrope', sans-serif;
+  margin-bottom: 1rem; 
+  
 }
 h5{
-  margin: 0;
+  font-size: 24px;
+  margin-bottom: 0.5rem;
   font-family:'manrope' , sans-serif ;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+h6{
+  font-size: 16px;
+  font-family:'manrope' , sans-serif ;
+  font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 p{
   font-size: 16px;
   letter-spacing: 0.2px;
   font-family: 'manrope', sans-serif;
-  max-width: 65ch;
-  color: var(--bg2);
+  color: var(--muted2);
 }
 
-a{ text-decoration:none; color:inherit; }
+a{ 
+  text-decoration:none;
+  color:inherit;
+  font-family: 'manrope', sans-serif; 
+  
+ }
 
 li a{
   transition: color .25s ease;
@@ -116,9 +134,10 @@ li a{
   background: var(--pink);
   padding: 0.25rem 0.5rem;
   display:flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
+
 
 .search input{
   width: min(420px, 60vw);
@@ -165,7 +184,6 @@ button, .btn{
   background: var(--pink);
   color: var(--bg2);
   border:0;
-  border-radius: 8px;
   padding: 12px 24px;
   font-size: 1rem;
   cursor:pointer;
@@ -183,10 +201,7 @@ button:hover, .btn:hover{
 .btn-secondary{
   background: transparent;
   color: var(--muted);
-  border: 2px solid var(--muted);
-  border-radius: 8px;
-  padding: 12px 16px;
-
+  border: 1px solid var(--muted);
 }
 
 
@@ -197,7 +212,10 @@ button:hover, .btn:hover{
   width: min(1200px, 90%);
   margin: 0 auto;
   display: flex;
+  text-align: center;
   flex-direction: column;
+  gap: 4rem;
+  height: auto;
 }
 
 section{
@@ -213,7 +231,23 @@ section{
   background: url("/resources/Close-up\ of\ Lips\ in\ Water.png") center / cover no-repeat;
   background-attachment: fixed;
   display: flex; 
+  padding: 0;
+  
 }
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.heroText1 h5{
+  color: var(--bg2);
+  
+
+}
+
 
 .heroText1 {
   opacity: 0;
@@ -226,24 +260,15 @@ section{
   opacity: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
+  width: 70%;
   transform: translateY(0);
 }
 
 .hero-title {
-  /* opacity: 0; */
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-
-.heroText p{
-  font-size: clamp(1rem, 1.2vw, 1.4rem);
-  color: var(--muted2);
-  
-}
-
-
-
-
 
 
 
@@ -251,8 +276,9 @@ section{
 
 
 .about-grid {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   justify-content: center;
 }
 
@@ -264,20 +290,29 @@ div img{
 
 
 /* card component */
-
-
-
-.card img {
-  height: 60%;
-  width: 100%;
-  object-fit: cover;
-} 
-
-
-
-article p {
-  color: var(--ink);
+article{
+  text-align: left;
 }
+
+.card{
+  display: flex;
+  flex-direction: column ;
+  justify-content: space-between;
+
+}
+
+.card img{
+  height: 60%;
+  object-fit: cover;
+  width: 100%;
+  
+}
+
+.cardText{
+  height: 100%;
+  text-align: left;
+}
+
 .cardsGrid{
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -326,10 +361,8 @@ footer p{
     left: 0;
     width: 250px; /* Define your menu width */
     height: 100%;
-    padding: 1rem;
     background: var(--bg);
-     /* Move completely off-screen to the left */
-    transform: translateX(-100%); 
+    transform: translateX(-999%); 
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
   }
@@ -347,9 +380,6 @@ footer p{
  
  }
  
- 
-
-
   .header-top{
     flex-direction: column;
     gap:0.5rem;
@@ -361,9 +391,6 @@ footer p{
     height: 100vh;
   }
 
-
- 
-
   .landingPage .container{
    display: flex;
    flex-direction: column;
@@ -372,19 +399,19 @@ footer p{
    position: relative;
     
   }
-  .about-grid{
-    flex-direction: column;
+
+  .heroText1.show {
+    width: 100%;
+    
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 
   section{
-    padding: 0;
+    padding: 0, 2rem;
   }
-
-  .btn{
-     margin: 0 auto;
-  }
-
-
 
 
 }
@@ -394,18 +421,18 @@ footer p{
   
   .landingPage .container{
     display: flex;
-    text-align: left;
-    align-self: end;
-    padding-bottom: 4rem;
+    text-align: center;
+    align-self: center;
+    
 
   }
   
-  .hero p{
-    width: 80%;
-  } 
-
   .hamburger{
     display: none;
+  }
+
+  ul {
+    padding: 0;
   }
 
 
