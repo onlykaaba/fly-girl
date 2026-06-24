@@ -14,7 +14,7 @@ html{ scroll-behavior:smooth; }
   --bg: #FAF4EF;
   --bg2: #faf4efde;
   --ink: #496C75;
-  --muted: #22424B;
+  --muted: #3A563D;
   --muted2: #22424B99;
   --pink: #F4A7C1;
   --nav-bar:#F5EEA6;
@@ -59,6 +59,7 @@ h1 {
   font-family: 'DM Serif Display', serif;
   margin-bottom: 1rem;
   color: var(--bg);
+  font-weight: 800;
  
   
 }
@@ -83,18 +84,18 @@ h4{
   
 }
 h5{
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 400;
   margin-bottom: 0.5rem;
   font-family:'manrope' , sans-serif ;
-  font-weight: 200;
   letter-spacing: 1px;
 }
 
 h6{
-  font-size: 16px;
+  font-size: 1rem;
   font-family:'manrope' , sans-serif ;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 p{
@@ -132,7 +133,7 @@ li a{
 
 .topPink{
   background: var(--pink);
-  padding: 0.25rem 0.5rem;
+  padding: 1rem 0.5rem;
   display:flex;
   flex-direction: row;
   justify-content: space-between;
@@ -184,7 +185,7 @@ button, .btn{
   background: var(--pink);
   color: var(--bg2);
   border:0;
-  padding: 12px 24px;
+  padding: 16px 32px;
   font-size: 1rem;
   cursor:pointer;
   display:inline-block;
@@ -212,14 +213,15 @@ button:hover, .btn:hover{
   width: min(1200px, 90%);
   margin: 0 auto;
   display: flex;
-  text-align: center;
   flex-direction: column;
   gap: 4rem;
   height: auto;
 }
 
+
+
 section{
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 
@@ -242,15 +244,17 @@ section{
 
 }
 
-.heroText1 h5{
-  color: var(--bg2);
-  
-
+.heroText{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
 
 
 .heroText1 {
   opacity: 0;
+  color: var(--bg2);
   transform: translateY(80px);
   transition: opacity 0.7s ease, transform 0.7s ease;
   
@@ -275,11 +279,14 @@ section{
 /* About section */
 
 
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   justify-content: center;
+  background-color: var(--bg2);
+  padding: 1rem;
 }
 
 div img{
@@ -292,6 +299,7 @@ div img{
 /* card component */
 article{
   text-align: left;
+  color: var(--muted2);
 }
 
 .card{
@@ -327,16 +335,44 @@ footer{
   text-align:center;
   color: var(--bg);
   background-color: var(--ink);
-  height: 40vh;
+  height:fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 4rem 0;
+  
+}
+
+.footercontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 0 0.5rem;
+  
 }
 
 footer p{
   margin:0;
   padding: 2rem;
   border-top: 1px solid rgba(59,42,36,.2);
+}
+
+footer li {
+  font-family: 'manrope', sans-serif ;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  color: var(--bg2);
+}
+
+.categories {
+  text-align: left;
+}
+.categories h6{
+  margin-bottom: 0;
+}
+.categories ul {
+  padding: 0;
 }
 
 /* Utilities */
