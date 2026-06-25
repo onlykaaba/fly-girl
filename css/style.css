@@ -324,9 +324,18 @@ article{
 .cardsGrid{
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
- gap: 20px;
+ gap: 1rem;
  
 } 
+
+label{
+  background-color: var(--pink);
+  position: absolute;
+  padding: 0.5rem 1rem;
+  
+  
+  
+}
 
 
 /* Footer */
