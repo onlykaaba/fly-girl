@@ -13,8 +13,14 @@ form{
     justify-content: center;
     margin-top: 20px;
     gap: 1rem;
-    width: 90%;
+    width: 60%;
     margin: 0 auto;
+}
+
+form label {
+    background-color: transparent;
+    position: inherit;
+   
 }
 
 /* Form elements */
