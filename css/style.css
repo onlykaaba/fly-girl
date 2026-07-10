@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 
-html{ scroll-behavior:smooth; }
+
 *{
   box-sizing:border-box;
   margin: 0;
-  /* border: 1px solid gray; */
+  scroll-behavior: smooth;
+ 
 }
 
 :root{
@@ -51,6 +52,7 @@ body{
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 
@@ -64,11 +66,6 @@ li{
   padding: var(--space-1);
   font-size: clamp(1rem, 1.2vw, 1.4rem);
 }
-
-
-
-
-
 
 h1 {
   font-size: 100px;
@@ -210,24 +207,37 @@ button:hover, .btn:hover{
 
 /* section and container */
 
-.main {
+.backgroundcover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  z-index: -1;
+}
+
+
+
+main {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  padding-inline: clamp(var(--space-2), 5vw, var(--space-4)) ;
+  gap: var(--space-5);
 }
 
 section {
-  padding-inline: clamp(var(--space-2), 5vw, var(--space-4)) ;
   width: 100%;
+  height: fit-content;
 }
 
 .container{
-  width: 100%;
-  height: fit-content;
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: var(--space-5);
 }
+
+
 
 
 
@@ -235,9 +245,10 @@ section {
 
 .landingPage{
   height: 100vh;
-  background: url("/resources/Close-up\ of\ Lips\ in\ Water.png") center / cover no-repeat;
-  background-attachment: fixed;
-  display: flex; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
   
 }
 
@@ -282,15 +293,20 @@ section {
 
 /* About section */
 
-
-
-.about-card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-  width: 100%;
+.about-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--muted);
+  padding: var(--space-3);
+  border-radius: var(--space-2);
 }
 
+.aboutText{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
 
 
 
@@ -300,30 +316,39 @@ section {
 .card{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   
 }
 
-.image{
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-
-}
-
-.image img {
+img{
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  display: block;
+  aspect-ratio: 4/3;
 }
 
+ /* .card .image img{
+  width: 100%;
+  aspect-ratio: 4/3;
+  height: auto;
+  object-fit: cover;
+} */
 
-
+/*.image img{
+  width: 100%;
+  height:auto;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+} */
 
 .cardsGrid{
  display: grid;
  grid-template-columns: repeat(4, 1fr);
- gap: var(--space-3);
-
- 
+ gap: clamp(var(--space-1) , 5vw, var(--space-3));
 } 
 
 label{
@@ -424,7 +449,11 @@ footer li {
     font-size: clamp(4rem, 5vw, 4rem);
   }
   .landingPage{
-    height: 100vh;
+    height: 80vh;
+  }
+
+  .landingPage h5{
+    font-size: clamp(1rem, 2vw, 1.5rem);
   }
 
   .landingPage .container{
