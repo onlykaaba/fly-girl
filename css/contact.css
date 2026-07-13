@@ -1,9 +1,13 @@
-.contactPage .container {
+/* .contactPage .container {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+} */
+
+.contactPage{
+    height: 100vh;
 }
 
 form{
@@ -11,9 +15,7 @@ form{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
     gap: 1rem;
-    width: 60%;
     margin: 0 auto;
 }
 
@@ -31,5 +33,4 @@ input[type="search"], input[type="text"], input[type="email"], textarea{
   border-radius: 8px;
   font-size: 1rem;
   box-sizing:border-box;
-  width: 80%;
 }

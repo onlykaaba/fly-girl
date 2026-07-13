@@ -1,7 +1,12 @@
-.policyPage .container {
+
+/* .policyPage .container {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+} */
+
+.policyPage{
+    height: 100vh;
 }

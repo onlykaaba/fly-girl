@@ -5,3 +5,14 @@
   justify-content: space-between;
   
 }
+
+
+
+.shopCover{
+  height: 40vh;
+  background-image: url(/resources/lummi1.avif);
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  
+}

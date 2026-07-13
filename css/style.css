@@ -18,6 +18,7 @@
   --muted: #3A563D;
   --muted2: #3D3D3D;
   --pink: #F4A7C1;
+  --pink-muted:  #be708a;
   --nav-bar:#F5EEA6;
 
 
@@ -27,7 +28,9 @@
   --space-2: 1rem;     /* 16px */
   --space-3: 1.5rem;   /* 24px */
   --space-4: 10rem;     /* 32px */
-  --space-5: 3rem;     /* 40px */
+  --space-5: 3rem;
+  --space-6: 4rem;
+       /* 40px */
 
   /* font sizes mobile */
 
@@ -36,7 +39,7 @@
   --font-size-3: 1.5rem; /*24px*/
   --font-size-4: 2rem; /*32px*/
   --font-size-5: 2.5rem; /*40px*/
-  --font-size-6: 3rem; /*48px*/
+  --font-size-6: 10rem;
 
 
 
@@ -59,7 +62,8 @@ body{
 ul{
   list-style:none;
   margin: 0;
-  padding: var(--space-2);
+  padding: 0;
+ 
 }
 
 li{
@@ -72,7 +76,6 @@ h1 {
   letter-spacing: -2px;
   line-height: normal;
   font-family: 'DM Serif Display', serif;
-  color: var(--bg);
   font-weight: 800; 
 }
 
@@ -102,7 +105,7 @@ h5{
 h6{
   font-size: var(--font-size-3);
   font-family:'manrope' , sans-serif ;
-  font-weight: 600; 
+  font-weight: 300; 
 }
 
 p{
@@ -118,17 +121,17 @@ a{
   
  }
 
-li a{
-  transition: color .25s ease;
-}
+/* .navBar li :hover{
+  color: var(--pink);
+} */
 
 
 
 /* components * header */
 
-.site-header{
+header{
   position:sticky;
-  top:0;
+  margin: 0;
   z-index: 1000;
   inset: 0 0 auto 0;
 }
@@ -141,9 +144,14 @@ li a{
   justify-content: space-between;
 }
 
+.topPink .logo{
+  width: 44px;
+  height: 44px;
+}
+
 
 .search input{
-  width: min(420px, 60vw);
+  /* width: min(420px, 60vw); */
 }
 
 .hamburger{
@@ -156,22 +164,27 @@ li a{
 /* components * Nav */
 
 .navBar{
-  display:flex;
-  background: transparent;
-  transition: background-color .25s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  transition: background-color 0.7s ease, box-shadow .25s ease;
+  
 }
 
 
 .navBar.scrolled{
+  display: flex;
   background: var(--nav-bar);
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
-.navBar.scrolled a{
-  color: var(--muted);
-}
+
 
 .navBar li :hover {
+  color: var(--pink);
+}
+
+li .active{
   color: var(--pink);
 }
 
@@ -183,58 +196,71 @@ li a{
 
 /* component * button */
 
-button, .btn{
+button ,.btn{
   background: var(--pink);
   color: var(--bg2);
-  padding: var(--space-2) var(--space-3);
+  padding: 8pt 20pt;
   cursor:pointer;
   display:inline-block;
   width: fit-content;
+  font-size: 10pt;
 }
 
-button:hover, .btn:hover{
+button:hover{
   background: var(--pink);
   color:var(--bg);
   transition: background-color .25s ease, color .25s ease;
 }
 
 .btn-secondary{
-  background: transparent;
-  color: var(--muted);
-  border: 1px solid var(--muted);
+  border: none;
+  background-color: var(--muted2);
+ 
 }
+
+
+
 
 
 /* section and container */
 
 .backgroundcover{
-  position: absolute;
+  position: fixed;
+  background-image:  url('/resources/Close-up of Lips in Water.png');
   top: 0;
   left: 0;
-  object-fit: cover;
+  right: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
+  height: 100%;
   z-index: -1;
 }
+
+
 
 
 
 main {
   display: flex;
   flex-direction: column;
-  padding-inline: clamp(var(--space-2), 5vw, var(--space-4)) ;
-  gap: var(--space-5);
+  margin-top: 0;
 }
 
-section {
-  width: 100%;
-  height: fit-content;
-}
+
 
 .container{
   display: flex;
   flex-direction: column;
-  width: 100%;
-  gap: var(--space-5);
+  width: min(100% - 2rem, 1200px);
+  height: fit-content;
+  gap: var(--space-3);
+  margin: 0 auto;
+}
+
+section{
+  padding: var(--space-6) 0;
 }
 
 
@@ -244,60 +270,30 @@ section {
 /* Hero */
 
 .landingPage{
+  
+  color: var(--bg);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--space-2);
-  
 }
-
-.hero{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.heroText{
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-
 
 .heroText1 {
   opacity: 0;
-  color: var(--bg2);
   transform: translateY(80px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  
+  transition: opacity 0.7s ease, transform 0.7s ease; 
 }
 
-.heroText1.show{
+.heroText1.show {
   opacity: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 70%;
   transform: translateY(0);
 }
-
-.hero-title {
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-
-
-/* About section */
 
 .about-card{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: var(--muted);
+  background-color: var(--bg2);
   padding: var(--space-3);
   border-radius: var(--space-2);
 }
@@ -305,7 +301,16 @@ section {
 .aboutText{
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
+  
+}
+
+
+/* products section */
+
+.productsPage{
+  background-color: white;
+
 }
 
 
@@ -322,28 +327,11 @@ section {
 
 img{
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
   aspect-ratio: 4/3;
 }
-
- /* .card .image img{
-  width: 100%;
-  aspect-ratio: 4/3;
-  height: auto;
-  object-fit: cover;
-} */
-
-/*.image img{
-  width: 100%;
-  height:auto;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-} */
 
 .cardsGrid{
  display: grid;
@@ -357,8 +345,12 @@ label{
   padding: 0.5rem 1rem;
 }
 
+/* bestsellers section */
+.bestsellers{
+  background-color: var(--bg2);
+}
 
-/* Footer */
+/* Footer  section*/
 
 footer{
   text-align:center;
@@ -368,35 +360,22 @@ footer{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 0;
+  gap: var(--space-2);
+  padding: var(--space-2);
   
 }
 
-.footercontainer {
+#footer{
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-  padding: 0 0.5rem;
-  
 }
 
-footer p{
-  margin:0;
-  padding: 2rem;
-  /* border-top: 1px solid rgba(59,42,36,.2); */
-}
-
-footer li {
-  font-family: 'manrope', sans-serif ;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 0.5rem 0;
-  color: var(--bg2);
-}
 
 .categories {
   text-align: left;
 }
+
+
 
 
 
@@ -448,15 +427,13 @@ footer li {
   h1{
     font-size: clamp(4rem, 5vw, 4rem);
   }
-  .landingPage{
-    height: 80vh;
-  }
+ 
 
   .landingPage h5{
     font-size: clamp(1rem, 2vw, 1.5rem);
   }
 
-  .landingPage .container{
+  .landingPage {
    display: flex;
    flex-direction: column;
    text-align: center;
@@ -464,6 +441,8 @@ footer li {
    position: relative;
     
   }
+
+  
 
   .heroText1.show {
     width: 100%;
@@ -482,7 +461,13 @@ footer li {
  gap: clamp(var(--space-1) , 5vw, var(--space-3));
  } 
 
+ #footer{
+  display: flex;
+  flex-direction: column;
 }
+
+}
+
 
 @media (min-width: 700px) and (max-width: 2000px) {
 
@@ -500,6 +485,13 @@ footer li {
   ul {
     padding: 0;
   }
+
+  .navBar{
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  transition: background-color 0.7s ease, box-shadow .25s ease;
+}
 
 
 
