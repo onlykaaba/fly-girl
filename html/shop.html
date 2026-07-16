@@ -20,22 +20,29 @@
           <img src="/resources/download.svg" alt="Soft Lips logo" width="80" height="40" />
         </a>
 
-        <form class="search" role="search" aria-label="Site search">
-          <label class="sr-only" for="site-search">
+       <div class="search">
+         <form class="search" role="search" aria-label="Site search">
+          <!-- <label class="sr-only" for="site-search">
             <span class="material-symbols-outlined">
                              search
             </span>
-          </label>
+          </label> -->
           <input id="site-search" type="search" name="q" placeholder="Search" />
         </form>
+
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
+         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill='#fff'><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </div>
+       </div>
+
       </div>
     </div>
 
     <!-- Primary nav -->
-    <nav class="navcontainer" aria-label="Primary">
+    <nav class="navcontainer" id="navcontainer" aria-label="Primary">
       <ul class="navBar" id="navBar">
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
         
         <li><a href="best-sellers.html">Best sellers</a></li>
         <li><a href="policy.html">Policy</a></li>
@@ -43,82 +50,146 @@
       </ul>
     </nav>
   </header>
+ 
 
   <main id="main">
-   
+     <div class="shopCover">
+
+    </div>
+
     <section id="products" class="productsPage" aria-labelledby="products-title">
       <div class="container">
-        
-        <h4 id="products-title">Shop</h4>
+        <h5 id="title">Products</h5>
 
         <div class="cardsGrid">
-          <article class="card">
-            <div>
-              <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="Glittery pink lip gloss" loading="lazy" />
+          <div class="card">
+            <div class="image">
+              <img src="/resources/4.webp" alt="Glittery pink lip gloss" loading="lazy" />
             </div>
-            <h6>Nourishing ingredients</h6>
-          </article>
 
-          <article class="card">
-           <div>
-             <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
-           </div>
-            <h6>Non-sticky shine</h6>
-          </article>
-
-          <article class="card">
-            <div>
-              <img src="/resources/Lip_gloss_clear.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            <div class="cardText">
+              <p>Vita C Boost brightening Serum</p>
+              <p>$22.02</p>
             </div>
-            <h6>Everyday comfort</h6>
-          </article>
 
-          <article class="card">
-           <div>
-            <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="" loading="lazy" />
-           </div>
-            <h6>Soft color payoff</h6>
-          </article>
+            <button class="btn-secondary" >Add to cart</button>
 
-          <article class="card">
-            <div>
+          </div>
+
+          <div class="card">
+            <div class="image">
+                <img src="/resources/lummi.avif" alt="Glittery pink lip gloss" loading="lazy" />
+              </div>
+            <div class="cardText">
+                <p>Vita C Boost brightening Serum</p>
+                <p>$22.02</p>
+            </div>
+            <button class="btn-secondary" href="shop.html">Add to cart</button>
+            
+          </div>
+
+          <div class="card">
+            <div class="image">
+              <img src="/resources/Lotus_Enzyme_Exfoliator_Carosello_1_7af05c56-19f9-4326-a2d1-95a0bb958c6c.webp" alt="Glittery pink lip gloss" loading="lazy" />
+            </div>
+            <div class="cardText">
+              <p>Everyday comfort</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary" href="shop.html">Add to cart</button>
+          </div>
+
+          <div class="card">
+           
+            <div class="image">
+              <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="" loading="lazy" />
+            </div>
+           
+            <div class="cardText">
+              <p>Soft color payoff</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
+
+          <div class="card">
+            
+              <div class="image">
+                <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
+              </div>
+            
+            <div class="cardText">
+              <p>Melanin-friendly</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
+          <div class="card" id="moja">
+            
+            <div class="image">
+               <img src="/resources/LASH_SCULPT_-_FLAT_2.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            </div>
+            
+            <div class="cardText">
+              <p>Melanin-friendly</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
+          <div class="card">
+            
+            <div class="image">
+                <img src="/resources/NEW-OPAL.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            </div>
+            
+            <div class="cardText">
+              <p>Melanin-friendly</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
+          <div class="card">
+           
+            <div class="image">
               <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
             </div>
-            <h6>Melanin-friendly</h6>
-          </article>
-          <article class="card">
-            <div>
-              <img src="/resources/LASH_SCULPT_-_FLAT_2.avif" alt="Glittery pink lip gloss" loading="lazy" />
+           
+           <label for="card"> sale</label>
+            <div class="cardText">
+              <p>Melanin-friendly</p>
+              <p>$22.02</p>
             </div>
-            <h6>Melanin-friendly</h6>
-          </article>
-          <article class="card">
-            <div>
-              <img src="/resources/NEW-OPAL.avif" alt="Glittery pink lip gloss" loading="lazy" />
-            </div>
-            <h6>Melanin-friendly</h6>
-          </article>
-          <article class="card">
-           <div>
-             <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
-           </div>
-            <h6>Melanin-friendly</h6>
-          </article>
-          <article class="card">
-            <div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
+          <div class="card">
+            
+            <div class="image">
               <img src="/resources/lip-buff-refy-284017.avif" alt="Glittery pink lip gloss" loading="lazy" />
             </div>
-            <h6>Melanin-friendly</h6>
-          </article>
-          <article class="card">
-            <div>
+            
+            <div class="cardText">
+              <p>Melanin-friendly</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
+          <div class="card">
+            
+            <div class="image">
               <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
             </div>
-            <h6>Melanin-friendly</h6>
-          </article>
+            
+            <div class="cardText">
+              <p>Melanin-friendly</p>
+              <p>$22.02</p>
+            </div>
+            <button class="btn-secondary">Add to cart</button>
+          </div>
         </div>
       </div>
     </section>
+   
+   
 
     <!-- Best sellers -->
     <section id="best-sellers" class="bestsellers" aria-labelledby="bestsellers-title">
@@ -145,10 +216,34 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
+  <footer  datatooltip="© 2026 Soft Lips. All rights reserved.">
+    
+      <div class="container" id="footer">
+       
+        <div class="categories">
+          <h6>Popular categories</h6>
+          <ul>
+            <li>make-up & skincare</li>
+            <li>Body care & Fragrance</li>
+            <li>Haircare</li>
+            <li>Natural & Organic</li>
+            <li>Tools & Accessories</li>
+          </ul>
+        </div>
+        <div class="categories">
+          <h6>Popular categories</h6>
+          <ul>
+            <li>make-up & skincare</li>
+            <li>make-up & skincare</li>
+            <li>make-up & skincare</li>
+            <li>make-up & skincare</li>
+            <li>make-up & skincare</li>
+          </ul>
+        </div>
+       
+      </div>
       <small>© 2026 Soft Lips. All rights reserved.</small>
-    </div>
+    
   </footer>
 
   <script src="/js/index.js" defer></script>
