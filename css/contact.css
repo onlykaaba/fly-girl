@@ -1,16 +1,22 @@
 
 
-.contactPage{
-    height: 100vh;
+section .container{
+    display: flex;
+    align-items: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
+   
 }
 
 .formContainer{
-    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-2);
+    
 }
 
 form label {
