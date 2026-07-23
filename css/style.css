@@ -202,8 +202,7 @@ video {
 /* component * button */
 
 button ,.btn{
- 
-  
+  border: none;
 }
 
 button:hover{
@@ -211,14 +210,6 @@ button:hover{
   color:var(--bg);
   transition: background-color .25s ease, color .25s ease;
 }
-
-.btn-secondary{
-  background: none;
-  border: 1px solid var(--pink);
-  
-}
-
-
 
 
 
@@ -260,7 +251,12 @@ main {
 }
 
 section{
-  padding: var(--space-6) 0;
+  padding: var(--space-5) 0;
+}
+
+.content{
+  background-color: #eeffeb;
+  
 }
 
 
@@ -310,12 +306,15 @@ section{
 }
 
 
-/* products section */
+/* shop-by section */
 
-.productsPage{
-  background-color: var(--bg);
-
+.shop-by{
+  display: grid;
+  grid-template-columns: 3 1fr;
+  gap: var(--space-2);
 }
+
+
 
 
 
@@ -377,9 +376,7 @@ label{
 
 
 /* bestsellers section */
-.bestsellers{
-  background-color: var(--bg2);
-}
+
 
 /* Footer  section*/
 
@@ -392,7 +389,7 @@ footer{
   flex-direction: column;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-2);
+ 
   
 }
 
