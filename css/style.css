@@ -39,7 +39,7 @@
   --font-size-3: 1.5rem; /*24px*/
   --font-size-4: 2rem; /*32px*/
   --font-size-5: 2.5rem; /*40px*/
-  --font-size-6: 10rem;
+  --font-size-6: 8rem;
 
 
 
@@ -50,7 +50,7 @@
 
 
 body{
-  font-family: 'DM Serif Display', serif;
+  font-family: 'poppins';
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -67,16 +67,16 @@ ul{
 }
 
 li{
-  padding: var(--space-1);
-  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 h1 {
   font-size: 100px;
-  letter-spacing: -2px;
-  line-height: normal;
-  font-family: 'DM Serif Display', serif;
-  font-weight: 800; 
+  font-weight: 800;
+  line-height: 120%; 
+  text-align: left;
+  margin-bottom: var(--space-2);
 }
 
 h2{
@@ -86,12 +86,19 @@ h2{
 }
 
 h3{
-  font-size: 48px;
-  letter-spacing: 0px;
+  font-size: clamp(var(--font-size-3), 2vw, var(--font-size-2));
+  line-height: 120%;
+  font-weight: 400;
+  margin-bottom: var(--space-3);
+  width: 100%;
+  text-align: left;
 }
 
 h4{
-  font-size: var(--font-size-4);
+  font-size: clamp(var(--font-size-2), 2vw, var(--font-size-1));
+  text-align: left;
+  margin-bottom: var(--space-1);
+  font-weight: 400;
   
 }
 h5{
@@ -101,16 +108,20 @@ h5{
 }
 
 h6{
-  font-size: var(--font-size-3);
-  font-family:'manrope' , sans-serif ;
-  font-weight: 300; 
+  font-size: var((--font-size-2), 2vw, var(--font-size-3));
+  line-height: 120%;
+  width: 100%;
+
 }
 
 p{
   font-size: var(--font-size-1);
   line-height: 1.5;
   color: var(--muted2);
+  margin-bottom: var(--space-2);
 }
+
+
 
 a{ 
   text-decoration:none;
@@ -179,8 +190,11 @@ header{
   color: var(--pink);
 }
 
-li .active{
-  color: var(--pink);
+.navlink{
+  font-weight: 400;
+  font-size: var(--font-size-2);
+  margin-right: var(--space-2);
+ 
 }
 
 
@@ -197,14 +211,12 @@ video {
 
 /* component * button */
 
-button ,.btn{
-  background: var(--pink);
-  color: var(--bg2);
-  padding: 8pt 20pt;
-  cursor:pointer;
-  display:inline-block;
+.btn {
+  padding: 1rem 2rem;
+  background-color: var(--pink);
+  margin-bottom: var(--space-2);
+  margin-top: var(--space-2);
   width: fit-content;
-  font-size: 10pt;
 }
 
 button:hover{
@@ -214,12 +226,9 @@ button:hover{
 }
 
 .btn-secondary{
-  background: none;
-  border: 1px solid var(--pink);
-  
+  width: fit-content;
+  padding: 0.5rem 1rem;
 }
-
-
 
 
 
@@ -246,6 +255,8 @@ button:hover{
 main {
   display: flex;
   flex-direction: column;
+  height: fit-content;
+  background: linear-gradient(to bottom, transparent 100vh, var(--bg) 40%);
 }
 
 
@@ -253,15 +264,18 @@ main {
 .container{
   display: flex;
   flex-direction: column;
-  width: min(100% - 2rem, 1200px);
+  width: min(100% - 2rem, 1400px);
   height: fit-content;
-  gap: var(--space-3);
-  margin: 0 auto;
+  text-align: left;
 }
 
 section{
   padding: var(--space-6) 0;
+  display: flex;
+  justify-content: center;
 }
+
+
 
 
 
@@ -275,11 +289,11 @@ section{
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .landingPage .container{
-  width: 50%;
+ max-width: 900px;
+ padding: var(--space-2);
 }
 
 .heroText1 {
@@ -296,26 +310,29 @@ section{
 .about-card{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
   background-color: var(--bg2);
-  padding: var(--space-3);
   border-radius: var(--space-2);
+  padding: var(--space-3);
+
 }
 
 .aboutText{
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  
 }
 
 
-/* products section */
+/* shop-by section */
 
-.productsPage{
-  background-color: var(--bg);
-
+.shop-by{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px; 
 }
+
+
 
 
 
@@ -334,7 +351,7 @@ img{
   height: 100%;
   object-fit: cover;
   display: block;
-  /* aspect-ratio: 4/3; */
+
 }
 .image img {
   aspect-ratio: 4/3;
@@ -377,14 +394,11 @@ label{
 
 
 /* bestsellers section */
-.bestsellers{
-  background-color: var(--bg2);
-}
+
 
 /* Footer  section*/
 
 footer{
-  text-align:center;
   color: var(--bg);
   background-color: var(--ink);
   height:fit-content;
@@ -392,7 +406,7 @@ footer{
   flex-direction: column;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-2);
+ 
   
 }
 
