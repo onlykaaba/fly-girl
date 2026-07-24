@@ -1,44 +1,14 @@
-.header-top{
-  width: 100%;  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  
-}
-
-
-
-.shopCover{
-  height: 80vh;
-  background-image: url(/resources/lummi4.avif);
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  
-
-  
-}
-
-/* label{
-  font-size: var(--font-size-3);
-  color: var(--text-1);
-  margin-right: var(--space-2);
-} */
 
 .search{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
+.main{
+  background-color: none;
+}
+
 
 input[type="search"]{
   width: 100%;
-  padding: var(--space-1);
-  border-radius: var(--radius-1);
-  border: none;
-  background-color: var(--bg);
-  color: var(--text-1);
-  font-size: var(--font-size-2);
+  
 }
 

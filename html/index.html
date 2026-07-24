@@ -15,13 +15,14 @@
   <header class="site-header">
     <!-- Top pink bar -->
     <div class="topPink">
-      
-      <a class="logo" href="/Html/index.html" aria-label="Go to homepage">
-        <img src="/resources/download.svg" alt="Soft Lips logo" width="80" height="40" />
-      </a>
-     
+      <div class=" header-top">
+        <a class="logo" href="/Html/index.html" aria-label="Go to homepage">
+          <img src="/resources/download.svg" alt="Soft Lips logo" width="80" height="40" />
+        </a>
       <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill='#fff'><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill='#fff'><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </div>
+
       </div>
     </div>
 
@@ -46,17 +47,19 @@
 
     <section id="home" class="landingPage" aria-labelledby="hero-title">
       <div class="container">
-        
-        <h1 class="hero-title" id="hero-title">Soft lips. Soft life.</h1>
-        <h4>
+        <div class="hero ">
+         <div>
+          <h1 class="hero-title " id="hero-title">Soft lips, Soft life.</h1>
+          <h4 class="">
             Discover the ultimate in lip care with our Soft Lips collection. Indulge in luxurious
             hydration and a touch of color for irresistibly soft, kissable lips.
-        </h4>
-
+          </h4>
+         </div>
+         
+        <a class="btn "  id="cta" href="shop.html" >Shop now</a>
+         
+        </div>
         
-        <a class="btn"  id="cta" href="shop.html" >Shop now</a>
-        
-
       </div>
     </section>
 
@@ -64,14 +67,15 @@
 
   <section id="about" class="aboutPage" aria-labelledby="about-title">
       <div class="container">
-        <div class="about-card">  
+        <!-- <div class="about-card">  
           <div class="aboutText">
-           <div>
+            <div>
              <h4>kylie’s summer faves</h4>
              <p>
                discover her go-tos this summer –including the new watermelon lip butter and hydrating lip essentials.
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ipsa adipisci molestias aliquam consequatur modi deserunt. Dolores exercitationem nisi sapiente aperiam obcaecati, dolorum officiis voluptatum quod, quia doloribus perspiciatis voluptates?
              </p>
-           </div>
+            </div>
             <a class="btn" href="">
                Discover more
             </a>
@@ -79,7 +83,7 @@
           <div class="imageBox">
            <img src="/resources/Cosmetic Injection Close-Up.png" alt="">
           </div>
-        </div>
+        </div> -->
       </div>
   </section>
 
@@ -87,20 +91,12 @@
       <div class="container">
         <h3>Shop by category</h3>
         <div class="shop-by">
-          <div class="card">
+          <div class="shop-card " id="card" >
             <div class="image">
-              <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="" loading="lazy" />
+             
             </div>
           </div>
-          <div class="card">
-            <div class="image">
-              <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="" loading="lazy" />
-            </div>
-          </div>
-          <div class="card">
-            <div class="image">
-              <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="" loading="lazy" />
-            </div>
+         
           </div>
 
         </div>
@@ -114,127 +110,136 @@
         <h3 id="title">Products</h3>
 
         <div class="cardsGrid">
-          <div class="card">
-            <div class="image">
+          <div class="card autoshow">
+            <div class="card-container">
               <img src="/resources/4.webp" alt="Glittery pink lip gloss" loading="lazy" />
-            </div>
-
-            <div class="cardText">
+              <div class="cardText">
               <p class="cardTitle">Vita C Boost brightening Serum</p>
               <p>$22.02</p>
+            </div>
             </div>
 
             <button class="btn-secondary" >Add to cart</button>
 
           </div>
 
-          <div class="card">
-            <div class="image">
+          <div class="card autoshow">
+            <div class="card-container">
                 <img src="/resources/lummi.avif" alt="Glittery pink lip gloss" loading="lazy" />
-              </div>
-            <div class="cardText">
+                <div class="cardText">
                 <p class="cardTitle">Vita C Boost brightening Serum</p>
                 <p>$22.02</p>
             </div>
+              </div>
+           
             <button class="btn-secondary" href="shop.html">Add to cart</button>
             
           </div>
 
-          <div class="card">
-            <div class="image">
+          <div class="card autoshow">
+            <div class="card-container">
               <img src="/resources/lummui5.avif" alt="Glittery pink lip gloss" loading="lazy" />
-            </div>
-            <div class="cardText">
+              <div class="cardText">
               <p class="cardTitle">Everyday comfort</p>
               <p>$22.02</p>
             </div>
+            </div>
+            
             <button class="btn-secondary" href="shop.html">Add to cart</button>
           </div>
 
-          <div class="card">
+          <div class="card autoshow">
            
-            <div class="image">
-              <img src="/resources/DOUBLE_BRUSH_-_FLAT.avif" alt="" loading="lazy" />
-            </div>
-           
-            <div class="cardText">
+            <div class="card-container">
+              <img src="/resources/lummi new1.avif" alt="" loading="lazy" />
+              <div class="cardText">
               <p class="cardTitle">Soft color payoff</p>
               <p>$22.02</p>
             </div>
+            </div>
+           
+            
             <button class="btn-secondary">Add to cart</button>
           </div>
 
-          <div class="card">
+          <div class="card autoshow">
             
-              <div class="image">
-                <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
+              <div class="card-container">
+                <img src="/resources/lummi nrw2.avif" alt="Glittery pink lip gloss" loading="lazy" />
+                <div class="cardText">
+                  <p class="cardTitle">Melanin-friendly</p>
+                  <p>$22.02</p>
+                </div>
               </div>
             
-            <div class="cardText">
-              <p class="cardTitle">Melanin-friendly</p>
-              <p>$22.02</p>
-            </div>
+            
             <button class="btn-secondary">Add to cart</button>
           </div>
-          <div class="card" id="moja">
+          <div class="card autoshow" id="moja">
             
-            <div class="image">
-               <img src="/resources/LASH_SCULPT_-_FLAT_2.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            <div class="card-container">
+               <img src="/resources/lummi new4.avif" alt="Glittery pink lip gloss" loading="lazy" />
+               <div class="cardText">
+                 <p class="cardTitle">Melanin-friendly</p>
+                 <p>$22.02</p>
+                </div>
             </div>
             
-            <div class="cardText">
-              <p class="cardTitle">Melanin-friendly</p>
-              <p>$22.02</p>
-            </div>
+            
             <button class="btn-secondary">Add to cart</button>
           </div>
-          <div class="card">
+          <div class="card autoshow">
             
-            <div class="image">
-                <img src="/resources/NEW-OPAL.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            <div class="card-container">
+                <img src="/resources/lummi new6.avif" alt="Glittery pink lip gloss" loading="lazy" />
+                <div class="cardText">
+                  <p class="cardTitle">Melanin-friendly</p>
+                  <p>$22.02</p>
+                </div>
             </div>
             
-            <div class="cardText">
-              <p class="cardTitle">Melanin-friendly</p>
-              <p>$22.02</p>
-            </div>
+            
             <button class="btn-secondary">Add to cart</button>
           </div>
-          <div class="card">
+          <div class="card autoshow">
            
-            <div class="image">
-              <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            <div class="card-container">
+              <label for="card"> sale</label>
+              <img src="/resources/lummi new 7.avif" alt="Glittery pink lip gloss" loading="lazy" />
+              
+              <div class="cardText">
+               <p class="cardTitle">Melanin-friendly</p>
+               <p>$22.02</p>
+              </div>
             </div>
            
-           <label for="card"> sale</label>
-            <div class="cardText">
-              <p class="cardTitle">Melanin-friendly</p>
-              <p>$22.02</p>
-            </div>
+           
             <button class="btn-secondary">Add to cart</button>
           </div>
-          <div class="card">
+          <div class="card autoshow">
             
-            <div class="image">
-              <img src="/resources/lip-buff-refy-284017.avif" alt="Glittery pink lip gloss" loading="lazy" />
+            <div class="card-container">
+              <img src="/resources/lummi nrw2.avif" alt="Glittery pink lip gloss" loading="lazy" />
+              <div class="cardText">
+               <p class="cardTitle">Melanin-friendly</p>
+               <p>$22.02</p>
+              </div>
             </div>
             
-            <div class="cardText">
-              <p class="cardTitle">Melanin-friendly</p>
-              <p>$22.02</p>
-            </div>
+           
             <button class="btn-secondary">Add to cart</button>
           </div>
-          <div class="card">
+          <div class="card autoshow">
             
-            <div class="image">
-              <img src="/resources/REFY-PRIMER-1-755811_1.avif" alt="Glittery pink lip gloss" loading="lazy" />
-            </div>
-            
-            <div class="cardText">
+            <div class="card-container">
+              <img src="/resources/lummi1.avif" alt="Glittery pink lip gloss" loading="lazy" />
+              <div class="cardText">
               <p class="cardTitle">Melanin-friendly</p>
               <p>$22.02</p>
             </div>
+            </div>
+            
+            
             <button class="btn-secondary">Add to cart</button>
           </div>
         </div>
@@ -249,13 +254,7 @@
            
         </div>
         <div class="scentText">
-            <h6 id="title">Scent</h6>
-            <p>
-              discover her go-tos this summer –including the new watermelon lip butter and hydrating lip essentials.
-            </p>
-            <a class="btn" href="">
-              Discover more
-            </a>
+           
         </div> 
  </section>
 
@@ -263,7 +262,7 @@
 
  <section id="best-sellers" class="bestsellers" aria-labelledby="bestsellers-title">
       <div class="container">
-        <h5 id="title">Best sellers</h5>
+        <h3 id="title">Best sellers</h3>
         <!-- Add best seller cards here -->
       </div>
  </section>
@@ -274,7 +273,7 @@
       <div class="container" id="footer">
        
         <div class="categories">
-          <h6>Popular categories</h6>
+          <h4>Popular categories</h4>
           <ul>
             <li>make-up & skincare</li>
             <li>Body care & Fragrance</li>
@@ -284,7 +283,7 @@
           </ul>
         </div>
         <div class="categories">
-          <h6>Popular categories</h6>
+          <h4>Popular categories</h4>
           <ul>
             <li>make-up & skincare</li>
             <li>make-up & skincare</li>
