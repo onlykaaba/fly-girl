@@ -32,5 +32,7 @@ toggleBtn.addEventListener('click', () => {
 const background = document.getElementById('backgroundcover');
 
 
+const cards = document.querySelectorAll('card'); 
+
 
 

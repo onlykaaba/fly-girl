@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "allowJs": true
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
   },
   "exclude": ["resources", "node_modules"]
 }

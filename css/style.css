@@ -12,7 +12,7 @@
 
 :root{
   --header-h: 120px;           /* adjust once */
-  --bg: #eeffeb;
+  --bg: #f5f5f5;
   --bg2: #FFD6D1;
   --ink: #014B43;
   --muted: #3A563D;
@@ -29,7 +29,7 @@
   --space-3: 1.5rem;   /* 24px */
   --space-4: 10rem;     /* 32px */
   --space-5: 3rem;
-  --space-6: 4rem;
+  --space-6: 8rem;
        /* 40px */
 
   /* font sizes mobile */
@@ -51,11 +51,12 @@
 
 body{
   font-family: 'poppins';
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 
@@ -72,11 +73,12 @@ li{
 }
 
 h1 {
-  font-size: 100px;
+  font-size: clamp(3rem, 2rem + 2vw, 6rem);
   font-weight: 800;
-  line-height: 120%; 
-  text-align: left;
+  line-height: 110%; 
+  letter-spacing: -2px;
   margin-bottom: var(--space-2);
+ 
 }
 
 h2{
@@ -88,17 +90,17 @@ h2{
 h3{
   font-size: clamp(var(--font-size-3), 2vw, var(--font-size-2));
   line-height: 120%;
-  font-weight: 400;
-  margin-bottom: var(--space-3);
-  width: 100%;
-  text-align: left;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
 }
 
 h4{
-  font-size: clamp(var(--font-size-2), 2vw, var(--font-size-1));
+  font-size: clamp(var(--font-size-1) 5vw var(--font-size-2));
   text-align: left;
   margin-bottom: var(--space-1);
   font-weight: 400;
+  max-width: 800px;
+  line-height: 120%;
   
 }
 h5{
@@ -117,8 +119,8 @@ h6{
 p{
   font-size: var(--font-size-1);
   line-height: 1.5;
-  color: var(--muted2);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
+  width: 100%;
 }
 
 
@@ -127,9 +129,29 @@ a{
   text-decoration:none;
   color:inherit;
   font: inherit; 
-  
+  margin: var(--space-1) 0;
  }
 
+ .autoshow{
+  animation: text-appear both;
+ }
+@supports (animation-timeline: view()) {
+ .autoshow{
+  animation-timeline: view();
+  animation-range: entry 10% cover 100vh;
+ }
+}
+@keyframes text-appear {
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
 
 
 
@@ -142,17 +164,30 @@ header{
   inset: 0 0 auto 0;
 }
 
+
+.header-top{
+  width: 100%;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-1);
+  gap: var(--space-1);
+  
+}
+
+
+
 .topPink{
   background: var(--pink);
-  padding: var(--space-2) var(--space-1);
   display:flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .topPink .logo{
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
 }
 
 
@@ -163,6 +198,9 @@ header{
   cursor: pointer;
 }
 
+.search{
+  display: none;
+}
 
 
 /* components * Nav */
@@ -171,6 +209,7 @@ header{
   display: flex;
   flex-direction: column;
   position: fixed;
+  color: var(--nav-bar);
   width: 100%;
   transition: background-color 0.7s ease, box-shadow .25s ease;
   
@@ -186,19 +225,19 @@ header{
 
 
 
-.navBar li :hover {
+.navBar a:hover {
   color: var(--pink);
 }
 
 .navlink{
   font-weight: 400;
   font-size: var(--font-size-2);
-  margin-right: var(--space-2);
+  margin-left: var(--space-2);
  
 }
 
 
-video {
+img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -209,25 +248,27 @@ video {
 
 
 
+
+
 /* component * button */
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 10px 20px;
   background-color: var(--pink);
-  margin-bottom: var(--space-2);
-  margin-top: var(--space-2);
   width: fit-content;
+  color: var(--bg);
 }
 
 button:hover{
-  background: var(--pink);
+  background: var(--ink);
   color:var(--bg);
   transition: background-color .25s ease, color .25s ease;
 }
 
 .btn-secondary{
-  width: fit-content;
-  padding: 0.5rem 1rem;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 12px;
 }
 
 
@@ -253,8 +294,6 @@ button:hover{
 
 
 main {
-  display: flex;
-  flex-direction: column;
   height: fit-content;
   background: linear-gradient(to bottom, transparent 100vh, var(--bg) 40%);
 }
@@ -264,15 +303,14 @@ main {
 .container{
   display: flex;
   flex-direction: column;
-  width: min(100% - 2rem, 1400px);
-  height: fit-content;
-  text-align: left;
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 100%;
+  padding: 0  var(--space-2) ;
 }
 
 section{
   padding: var(--space-6) 0;
-  display: flex;
-  justify-content: center;
 }
 
 
@@ -283,18 +321,30 @@ section{
 
 /* Hero */
 
-.landingPage{
-  
-  color: var(--bg);
-  height: 100dvh;
+
+
+.hero{
   display: flex;
   flex-direction: column;
 }
 
-.landingPage .container{
- max-width: 900px;
- padding: var(--space-2);
+.landingPage{
+  height: 100dvh;
+  padding: 0;
+  color: var(--bg);
+  
 }
+
+.landingPage .container{
+  justify-content: flex-end;
+  padding-bottom: var(--space-6);
+ 
+
+}
+
+
+
+
 
 .heroText1 {
   opacity: 0;
@@ -308,15 +358,17 @@ section{
 }
 
 .about-card{
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-2);
-  width: 100%;
-  background-color: var(--bg2);
-  border-radius: var(--space-2);
-  padding: var(--space-3);
+ background-color: #f5f5f5;
+ padding: var(--space-2);
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--space-2);
+ height: fit-content;
 
 }
+
+
+
 
 .aboutText{
   display: flex;
@@ -327,10 +379,31 @@ section{
 /* shop-by section */
 
 .shop-by{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px; 
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-1);
+  overflow-x: auto;        /* Enables horizontal scrolling (clips the rest) */
+  scroll-snap-type: x mandatory; /* Activates the "slider" snap effect */           
 }
+.shop-card{
+  flex: 0 0 auto; 
+  scroll-snap-align: center;
+  min-width: 640px; 
+  border-radius: 24px;
+  
+  
+}
+
+.shop-card .image{
+  flex: 0 0 auto; 
+  scroll-snap-align: center;
+  min-width: 320px; /* Your desired minimum size */
+  min-width: 0;     /* ADD THIS: Allows the card to respect constraints */
+  width: 320px; 
+}
+
+
+
 
 
 
@@ -343,24 +416,25 @@ section{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+  background-color: var(--bg2);
+  padding:  var(--space-1)  var(--space-1) var(--space-2);
+  border-radius: 24px;
 }
 
-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 
-}
-.image img {
+
+
+
+.card-container img {
   aspect-ratio: 4/3;
+  border-radius: 12px;
 }
+
 
 .cardsGrid{
  display: grid;
- grid-template-columns: repeat(4, 1fr);
- gap: clamp(var(--space-1) , 5vw, var(--space-3));
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: clamp(var(--space-2) , 5vw, var(--space-3));
 } 
 
 label{
@@ -406,13 +480,13 @@ footer{
   flex-direction: column;
   justify-content: center;
   gap: var(--space-2);
- 
-  
+  margin-bottom: 0;
 }
 
 #footer{
   display: flex;
   flex-direction: row;
+  gap: 1rem;
 }
 
 
@@ -437,7 +511,7 @@ footer{
   .hamburger{
     display: flex;
     cursor: pointer;
-    padding: 1rem;
+   
   }
 
   .navcontainer{
@@ -446,7 +520,7 @@ footer{
     left: 0;
     width: 250px; /* Define your menu width */
     height: 100%;
-    background: var(--bg);
+    background: var(--ink);
     transform: translateX(-999%); 
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
@@ -459,40 +533,11 @@ footer{
   }
  
  .navBar{
-  display: block;
+  display: flex;
   height: 100%;
-  
- 
  }
  
-  .header-top{
-    flex-direction: column;
-    gap:0.5rem;
-  }
-  h1{
-    font-size: clamp(4rem, 5vw, 4rem);
-  }
- 
 
-  .landingPage h5{
-    font-size: clamp(1rem, 2vw, 1.5rem);
-  }
-
-  .landingPage {
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   justify-content: center;
-   position: relative;
-    
-  }
-
-  
-
-  .heroText1.show {
-    width: 100%;
-    
-  }
 
  .about-card {
   display: flex;
@@ -511,14 +556,18 @@ footer{
   flex-direction: column;
 }
 
-.landingPage .container{
-  width: 100%;
-}
+
 
 .scentSection{
   position: relative;
   height: fit-content;
 
+}
+main {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
 }
 
 }
@@ -527,31 +576,16 @@ footer{
 @media (min-width: 700px) and (max-width: 2000px) {
 
   
-  .landingPage .container{
-    display: flex;
-    text-align: center;
-    align-self: center;
-  }
-  
-  .hamburger{
-    display: none;
-  }
-
-  ul {
-    padding: 0;
-  }
 
   .navBar{
   display: flex;
   flex-direction: row;
-  background-color: transparent;
+  background-color: var(--ink);
   transition: background-color 0.7s ease, box-shadow .25s ease;
 }
 
 
 
-
- 
   
 }
 
