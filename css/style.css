@@ -27,9 +27,9 @@
   --space-1: 0.5rem;   /* 8px */
   --space-2: 1rem;     /* 16px */
   --space-3: 1.5rem;   /* 24px */
-  --space-4: 10rem;     /* 32px */
-  --space-5: 3rem;
-  --space-6: 8rem;
+  --space-4: 6rem;     /* 32px */
+  --space-5: 10rem;
+  --space-6: 12rem;
        /* 40px */
 
   /* font sizes mobile */
@@ -92,13 +92,14 @@ h3{
   line-height: 120%;
   font-weight: 600;
   margin-bottom: var(--space-2);
+  color:var(--muted);
 }
 
 h4{
   font-size: clamp(var(--font-size-1) 5vw var(--font-size-2));
   text-align: left;
-  margin-bottom: var(--space-1);
-  font-weight: 400;
+  margin-bottom: var(--space-2);
+  font-weight: 500;
   max-width: 800px;
   line-height: 120%;
   
@@ -118,9 +119,16 @@ h6{
 
 p{
   font-size: var(--font-size-1);
-  line-height: 1.5;
-  margin-bottom: var(--space-1);
-  width: 100%;
+  color: var(--muted2);
+  
+}
+
+.cardTitle{
+  line-height: 120%;
+  font-size: 14px;
+  font-weight: 500;
+  
+  
 }
 
 
@@ -138,7 +146,7 @@ a{
 @supports (animation-timeline: view()) {
  .autoshow{
   animation-timeline: view();
-  animation-range: entry 10% cover 100vh;
+  animation-range: entry 30% cover 100vh;
  }
 }
 @keyframes text-appear {
@@ -171,7 +179,7 @@ header{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-2) var(--space-1);
+  padding: var(--space-1) var(--space-1);
   gap: var(--space-1);
   
 }
@@ -185,9 +193,14 @@ header{
   justify-content: space-between;
 }
 
-.topPink .logo{
+.logo{
   width: 56px;
   height: 56px;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -239,10 +252,11 @@ header{
 
 img {
     max-width: 100%;
-    height: auto;
+    height:auto;
     display: block;
     margin: 0 auto;
     object-fit: cover;
+
 }
 
 
@@ -255,25 +269,28 @@ img {
 .btn {
   padding: 10px 20px;
   background-color: var(--pink);
+  border: none;
+  border-radius: 12px;
   width: fit-content;
+  height: fit-content;
   color: var(--bg);
+  white-space: nowrap;
+
+  
 }
 
-button:hover{
+.btn:hover{
   background: var(--ink);
-  color:var(--bg);
   transition: background-color .25s ease, color .25s ease;
 }
 
-.btn-secondary{
+/* .btn-secondary{
  padding: 10px 20px;
  border: none;
  border-radius: 12px;
-}
-
-
-
-/* section and container */
+ height: fit-content;
+ white-space: nowrap;
+} */
 
 .backgroundcover{
   position: fixed;
@@ -306,11 +323,14 @@ main {
   margin: 0 auto;
   max-width: 1280px;
   height: 100%;
-  padding: 0  var(--space-2) ;
+  gap: var(--space-4);
+  padding: 0  var(--space-2);
+  flex-wrap: wrap;
 }
 
 section{
   padding: var(--space-6) 0;
+  height: fit-content;
 }
 
 
@@ -323,56 +343,94 @@ section{
 
 
 
-.hero{
+
+
+.hero {
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  /* This line makes the change animate instead of snap */
+  transition: opacity 1s ease-out, transform 1s ease-out; 
 }
+
+.hero.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 
 .landingPage{
   height: 100dvh;
   padding: 0;
   color: var(--bg);
-  
 }
 
 .landingPage .container{
   justify-content: flex-end;
   padding-bottom: var(--space-6);
- 
-
+  height: 100%;
 }
 
 
 
 
 
-.heroText1 {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 0.7s ease, transform 0.7s ease; 
-}
 
-.heroText1.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .about-card{
  background-color: #f5f5f5;
  padding: var(--space-2);
- display: grid;
- grid-template-columns: 1fr 1fr;
+ display: flex;
  gap: var(--space-2);
- height: fit-content;
-
+ border-radius: 12px;
 }
 
+.imagebox{
+   width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+.imagebox img{
+   width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 
 
 .aboutText{
   display: flex;
   flex-direction: column;
+  gap: var(--space-2);
+}
+
+
+.item{
+  width: 100%;
+  max-height: 350px;
+  padding: var(--space-2);
+  background-color: #3D3D3D;
+  border: 1px solid #e95656 ;
+  border-radius: 12px;
+}
+.item img {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+
+.category-container{
+  display: grid;
+  grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2);
+  
 }
 
 
@@ -390,18 +448,7 @@ section{
   scroll-snap-align: center;
   min-width: 640px; 
   border-radius: 24px;
-  
-  
 }
-
-.shop-card .image{
-  flex: 0 0 auto; 
-  scroll-snap-align: center;
-  min-width: 320px; /* Your desired minimum size */
-  min-width: 0;     /* ADD THIS: Allows the card to respect constraints */
-  width: 320px; 
-}
-
 
 
 
@@ -413,15 +460,25 @@ section{
 
 
 .card{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-color: var(--bg2);
-  padding:  var(--space-1)  var(--space-1) var(--space-2);
-  border-radius: 24px;
+  border-radius: 16px;
 }
 
 
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  gap:var(--space-1);
+  height: 100%;
+  justify-content: space-between;
+  padding:  var(--space-1)  var(--space-1) var(--space-2);
+}
+
+.cardText{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
@@ -434,40 +491,35 @@ section{
 .cardsGrid{
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- gap: clamp(var(--space-2) , 5vw, var(--space-3));
+ gap: clamp(var(--space-2) , 5vw, var(--space-2));
+ height: fit-content;
 } 
 
 label{
-  background-color: var(--pink);
+  background-color: var(--ink);
   position: absolute;
-  padding: 0.5rem 1rem;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 0px 12px;
+  margin-top: var(--space-1);
+  color: var(--bg);
+  
 }
 
-
-
-.scentSection{
+/* .scentSection{
   position: relative;
   height: fit-content;
 
-}
-
-
-
-.scentText{
-  position: absolute;
-  width: 50%;
-  top: 50%;           /* Moves top edge to vertical center */
-  transform: translateY(-50%);
-
-}
-
-
-
-
+} */
 
 
 
 /* bestsellers section */
+
+.best-sellers-container{
+  display: flex;
+  gap: var(--space-2);
+}
 
 
 /* Footer  section*/
@@ -475,27 +527,23 @@ label{
 footer{
   color: var(--bg);
   background-color: var(--ink);
-  height:fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--space-2);
-  margin-bottom: 0;
+  align-items: center;
+  gap: var(--space-3);
+
 }
 
-#footer{
+
+
+.footer-container {
+  height:fit-content;
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
 }
 
-
-.categories {
-  text-align: left;
+.categories{
+  padding: var(--space-2);
 }
-
-
-
 
 
 /* Utilities */
@@ -536,8 +584,17 @@ footer{
   display: flex;
   height: 100%;
  }
- 
 
+ main {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
+}
+
+ section{
+  padding: var(--space-3) 0;
+}
 
  .about-card {
   display: flex;
@@ -556,18 +613,16 @@ footer{
   flex-direction: column;
 }
 
-
-
 .scentSection{
   position: relative;
   height: fit-content;
 
 }
-main {
+
+.best-sellers-container{
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
+  gap: var(--space-2);
 }
 
 }
