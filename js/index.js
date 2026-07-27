@@ -13,10 +13,22 @@ window.addEventListener("scroll", () => {
 
 });
 
+
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".heroText1").forEach(el => {
-    el.classList.add("show");
-  });
+  // Check session storage first
+ 
+
+    const heroes = document.querySelectorAll(".hero");
+    
+    // Select elements by CLASS (.hero)
+    setTimeout(() => {
+      heroes.forEach(el => {
+        el.classList.add("show");
+      });
+    }, 10);
+
+  
+
 });
 
 

@@ -2,7 +2,9 @@
   "compilerOptions": {
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "outDir": "./dist",
+    "noEmit": false
   },
-  "exclude": ["resources", "node_modules"]
+  "exclude": ["resources", "node_modules", "dist"]
 }

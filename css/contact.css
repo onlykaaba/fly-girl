@@ -1,21 +1,16 @@
-
+main{
+    height: 100dvh;
+}
 form {
     display: flex;
     flex-direction: column;
-   
-}
-
-.formContainer{
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    align-items: center;
-    
+    gap: var(--space-2); 
+    max-width: 400px; 
 }
 
 form label {
-    background-color: transparent;
-    position: inherit;  
+    color: black;
+
 }
 
 /* Form elements */

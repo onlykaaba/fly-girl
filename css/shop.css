@@ -1,14 +1,9 @@
-
-.search{
-  display: flex;
-}
-.main{
-  background-color: none;
+.productsPage{
+  background-color: var(--bg);
 }
 
 
-input[type="search"]{
-  width: 100%;
-  
-}
+
+
+
 
