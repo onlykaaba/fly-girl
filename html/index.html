@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fly-girl</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,,600,700,800,900" rel="stylesheet" />  
 <body>
   <header class="site-header">
     <!-- Top pink bar -->
@@ -19,9 +14,11 @@
         <a class="logo" href="/Html/index.html" aria-label="Go to homepage">
           <img src="/resources/download.svg" alt="Soft Lips logo"    />
         </a>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
-         <svg xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 -960 960 960" width="44px" fill='#fff'><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-      </div>
+        <div class="icons">
+          <div class="logo hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
+           <svg xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 -960 960 960" width="44px" fill='#fff'><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+         </div>
+        </div>
 
       </div>
     </div>
@@ -31,7 +28,7 @@
       <div class="navBar" id="navBar">
         <a class="navlink" href="index.html" >Home</a>
         <a class="navlink" href="shop.html">Shop</a>
-        <a class="navlink" href="best-sellers.html" >Best sellers</a>
+        <a class="navlink" href="cart.html" >Cart</a>
         <a class="navlink" href="policy.html" >Policy</a>
         <a class="navlink" href="contact.html">Contact</a>
       </div>
@@ -51,8 +48,8 @@
          
           <h1 class="hero-title " id="hero-title">Soft lips, Soft life.</h1>
           <h4 class="hero-text">
-            Discover the ultimate in lip care with our Soft Lips collection. Indulge in luxurious
-            hydration and a touch of color for irresistibly soft, kissable lips.
+            Discover the ultimate in lip care with our Soft Lips collection.<br>
+            Indulge in luxurious hydration and a touch of color <br> for irresistibly soft, kissable lips.
           </h4>
         
          
@@ -70,19 +67,20 @@
         <div class="about-card">  
           <div class="aboutText">
             <div>
-             <h4>kylie’s summer faves</h4>
+             <h3>kylie’s summer faves</h3>
              <p>
                discover her go-tos this summer –including the new watermelon lip butter and hydrating lip essentials.
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ipsa adipisci molestias aliquam consequatur modi deserunt. Dolores exercitationem nisi sapiente aperiam obcaecati, dolorum officiis voluptatum quod, quia doloribus perspiciatis voluptates?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit?
              </p>
             </div>
-            <a class="btn" href="">
+            <a class="btn" href="/html/shop.html">
                Discover more
             </a>
           </div>
           <div class="imageBox">
-           <img src="/resources/kylie front.webp" alt="">
+             <img src="/resources/Skincare Joy Outdoors.png" alt="">
           </div>
+          
         </div>
       </div>
   </section>
@@ -95,18 +93,25 @@
       </div>
       <div class="category">
         <div class="category-container">
-          <div class="item">
+          <div class="item open">
             <h4 class="item-title">soft glow</h4>
-            <img src="/resources/lummi4.avif" alt="">
+            <div class="item-image">
+              <img class="unhide visible" src="/resources/lummi4.avif" alt="">
+            </div>
             
           </div>
-         <div class="item">
+         <div class="item open">
             <h4 class="item-title">soft glow</h4>
-            <img src="/resources/lummi nrw2.avif" alt="">
+            <div  class="item-image">
+              <img class="unhide visible" src="/resources/lummi nrw2.avif" alt="">
+            </div>
             
           </div>
-          <div class="item">
+          <div class="item open">
             <h4 class="item-title">soft glow</h4>
+           <div class="item-image">
+             <img class="unhide visible" src="/resources/lummi nrw2.avif" alt="">
+           </div>
             
           </div>
         </div>
@@ -133,7 +138,10 @@
                  <p class="cardTitle">Vita C Boost brightening Serum</p>
                  <p>$22.02</p>
                </div>
-               <button class="btn" >Add to cart</button>
+               <div>
+                <a href="/resources/shopping_cart_2_fill.svg" aria-label="Add to cart"></a>
+
+               </div>
               </div>
             </div>
           </div>
@@ -262,11 +270,18 @@
 
     <!-- scent section -->
 
- <div id="scentSection" class="scentSection" >
-    <div class="imagewrapper">
-      <img src="/resources/kylie front.webp" alt="">
-    </div>
- </div>
+ 
+ 
+   <section class="imagewrapper">
+     <div class="container">
+       <div class="wrapper-text">
+         <h3>Discover the ultimate in lip care</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ullam, asperiores sit itaque commodi quis ipsa accusantium eos fugiat voluptatem vero fugit, velit necessitatibus explicabo in labore maiores, cum dolor.</p>
+       </div>
+     </div>
+   </section>
+
+ 
 
     <!-- Best sellers -->
 
@@ -282,12 +297,11 @@
                  <p class="cardTitle">Melanin-friendly</p>
                  <p>$22.02</p>
                </div>
-               <button class="btn-secondary">Add to cart</button>
+               <button class="btn">Add to cart</button>
               </div>
             </div>
         </div>
         <div class="card autoshow">
-            
             <div class="card-container">
                 <img src="/resources/lummi new6.avif" alt="Glittery pink lip gloss" loading="lazy" />
                 <div class="cardText">
@@ -295,12 +309,11 @@
                    <p class="cardTitle">Melanin-friendly</p>
                    <p>$22.02</p>
                   </div>
-                  <button class="btn-secondary">Add to cart</button>
+                  <button class="btn">Add to cart</button>
                 </div>
             </div>
           </div>
           <div class="card autoshow">
-            
             <div class="card-container">
                 <img src="/resources/lummi new6.avif" alt="Glittery pink lip gloss" loading="lazy" />
                 <div class="cardText">
@@ -308,7 +321,7 @@
                    <p class="cardTitle">Melanin-friendly</p>
                    <p>$22.02</p>
                   </div>
-                  <button class="btn-secondary">Add to cart</button>
+                  <button class="btn">Add to cart</button>
                 </div>
             </div>
           </div>
