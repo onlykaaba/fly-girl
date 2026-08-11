@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 
 
@@ -57,6 +58,8 @@ body{
   flex-direction: column;
   overflow-x: hidden;
   min-height: 100dvh;
+  background: none;
+  color: var(--ink);
 }
 
 
@@ -68,15 +71,14 @@ ul{
 }
 
 li{
-  font-weight: 300;
-  font-size: 1rem;
+  font-family: "Lora", serif;
+  padding: var(--space-1) 0;
 }
 
 h1 {
   font-size: clamp(3rem, 2rem + 2vw, 6rem);
   font-weight: 800;
   line-height: 110%; 
-  letter-spacing: -2px;
   margin-bottom: var(--space-2);
  
 }
@@ -84,29 +86,28 @@ h1 {
 h2{
   font-size: 60px;
   letter-spacing: -0.5px;
+  font-weight: 700;
   
 }
 
 h3{
   font-size: clamp(var(--font-size-3), 2vw, var(--font-size-2));
   line-height: 120%;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: var(--space-2);
-  color:var(--muted);
 }
 
 h4{
   font-size: clamp(var(--font-size-1) 5vw var(--font-size-2));
   text-align: left;
   margin-bottom: var(--space-2);
-  font-weight: 500;
-  max-width: 800px;
+  font-weight: 600;
   line-height: 120%;
   
 }
 h5{
   font-size:clamp(var(--font-size-2), 2vw, var(--font-size-3));
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 
@@ -114,12 +115,15 @@ h6{
   font-size: var((--font-size-2), 2vw, var(--font-size-3));
   line-height: 120%;
   width: 100%;
+  font-weight: 400;
 
 }
 
 p{
   font-size: var(--font-size-1);
-  color: var(--muted2);
+  font-weight: 400;
+  font-family: "Lora", serif;
+  line-height: 150%;
   
 }
 
@@ -143,6 +147,7 @@ a{
  .autoshow{
   animation: text-appear both;
  }
+
 @supports (animation-timeline: view()) {
  .autoshow{
   animation-timeline: view();
@@ -203,12 +208,40 @@ header{
   height: 100%;
 }
 
+.cart{
+  padding: .5rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+}
+
+.cart-count{
+  position: absolute;
+  top: 0;
+  right: -6px;
+  color: var(--bg);
+  width: 20px;
+  height: 20px;
+  background: var(--ink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 50%;
+  visibility: hidden;
+}
+.icons{
+  display: flex;
+  align-items: center;
+  
+}
 
 
 
 .hamburger{
   display: none;
   cursor: pointer;
+  padding: .5rem;
 }
 
 .search{
@@ -252,11 +285,28 @@ header{
 
 img {
     max-width: 100%;
-    height:auto;
+    height:100%;
     display: block;
     margin: 0 auto;
     object-fit: cover;
+}
 
+.about-card img {
+  /* 1. Flex Sizing: Takes up 50% of the card width */
+  flex: 1; 
+  
+  /* 2. Dimensions: Fill the container height */
+  width: 100%;
+  
+  
+  /* 3. Critical: Crops image to fit without distortion */
+  object-fit: cover; 
+  
+  /* 4. Layout: Removes default inline spacing gaps */
+  display: block;
+  
+  /* 5. Visual: Optional minimum height for desktop balance */
+  min-height: 300px; 
 }
 
 
@@ -267,7 +317,7 @@ img {
 /* component * button */
 
 .btn {
-  padding: 10px 20px;
+  padding: var(--space-2) var(--space-3);
   background-color: var(--pink);
   border: none;
   border-radius: 12px;
@@ -275,6 +325,8 @@ img {
   height: fit-content;
   color: var(--bg);
   white-space: nowrap;
+  cursor: pointer;
+  border-radius: 24px 0px;
 
   
 }
@@ -284,18 +336,22 @@ img {
   transition: background-color .25s ease, color .25s ease;
 }
 
-/* .btn-secondary{
- padding: 10px 20px;
- border: none;
- border-radius: 12px;
- height: fit-content;
- white-space: nowrap;
-} */
+label{
+  background-color: var(--ink);
+  position: absolute;
+  font-size: 12px;
+  border-radius: 12px 0px;
+  padding: 0px 12px;
+  color: var(--bg);
+  
+}
+
+
 
 .backgroundcover{
   position: fixed;
-  background-image:  url('/resources/Close-up of Lips in Water.png');
-  top: 0;
+  background-image:  url('/resources/Close-up\ of\ Lips\ in\ Water.png');
+  top: 130px;
   left: 0;
   right: 0;
   background-size: cover;
@@ -323,10 +379,12 @@ main {
   margin: 0 auto;
   max-width: 1280px;
   height: 100%;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding: 0  var(--space-2);
   flex-wrap: wrap;
 }
+
+
 
 section{
   padding: var(--space-6) 0;
@@ -382,22 +440,26 @@ section{
 
 .about-card{
  background-color: #f5f5f5;
- padding: var(--space-2);
- display: flex;
+ padding: var(--space-3);
+ display: grid;
+ grid-template-columns: 1fr 1fr;
  gap: var(--space-2);
- border-radius: 12px;
+ border-radius: 24px;
+ align-self: center;
 }
 
-.imagebox{
-   width: 300px;
-  height: 200px;
-  overflow: hidden;
+.imageBox{
+  max-height: 320px;
 }
-.imagebox img{
-   width: 100%;
+
+.imageBox img {
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 16px;
 }
+
+
+
 
 
 
@@ -410,18 +472,31 @@ section{
 
 .item{
   width: 100%;
-  max-height: 350px;
   padding: var(--space-2);
-  background-color: #3D3D3D;
-  border: 1px solid #e95656 ;
-  border-radius: 12px;
+  background-color: var(--ink);
+  border-radius: 16px;
+  color: var(--bg);
+  cursor: pointer;
 }
-.item img {
-  height: 80%;
+
+
+
+
+.unhide{
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
+  display: none;
+  overflow: hidden;
 }
+
+.item:hover .unhide{
+  display: block;
+}
+
+
+
+
 
 
 
@@ -443,12 +518,18 @@ section{
   overflow-x: auto;        /* Enables horizontal scrolling (clips the rest) */
   scroll-snap-type: x mandatory; /* Activates the "slider" snap effect */           
 }
+
 .shop-card{
   flex: 0 0 auto; 
   scroll-snap-align: center;
   min-width: 640px; 
   border-radius: 24px;
 }
+
+ .item-image img {
+  max-height: 200px;
+  object-fit: cover;
+ }
 
 
 
@@ -495,41 +576,53 @@ section{
  height: fit-content;
 } 
 
-label{
-  background-color: var(--ink);
-  position: absolute;
-  font-size: 12px;
-  border-radius: 12px;
-  padding: 0px 12px;
-  margin-top: var(--space-1);
-  color: var(--bg);
-  
+
+
+.imagewrapper {
+  height: 50dvh;
+  position: relative;
+  background-image: url(/resources/hero\ 3.jpeg);
+  background-position: 50% 50%;
 }
 
-/* .scentSection{
-  position: relative;
-  height: fit-content;
+.wrapper-text{
+  position: absolute;
+  top: 50%;
+  color: var(--bg);
+  max-width: 800px;
+}
 
-} */
+
+
+
+
+
 
 
 
 /* bestsellers section */
+.bestsellers{
+  background-color: #291A1F;
+}
+
 
 .best-sellers-container{
   display: flex;
   gap: var(--space-2);
 }
 
+/* .autoshow {
+  background-color: #382C30;
+} */
+
 
 /* Footer  section*/
 
 footer{
   color: var(--bg);
-  background-color: var(--ink);
+  background-color: #382C30;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--space-3);
 
 }
@@ -592,6 +685,10 @@ footer{
   background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
 }
 
+.backgroundcover{
+  top: 0px;
+}
+
  section{
   padding: var(--space-3) 0;
 }
@@ -600,6 +697,7 @@ footer{
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  width: 100%;
  }
 
  .cardsGrid{
@@ -625,6 +723,11 @@ footer{
   gap: var(--space-2);
 }
 
+.footer-container {
+  height:fit-content;
+  display: block;
+}
+
 }
 
 
@@ -637,6 +740,10 @@ footer{
   flex-direction: row;
   background-color: var(--ink);
   transition: background-color 0.7s ease, box-shadow .25s ease;
+}
+
+section{
+   padding: var(--space-4) 0;
 }
 
 

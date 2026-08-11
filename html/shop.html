@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fly-girl</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <link rel="stylesheet" href="/css/shop.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
  </head>
@@ -20,8 +16,10 @@
         <a class="logo" href="/Html/index.html" aria-label="Go to homepage">
           <img src="/resources/download.svg" alt="Soft Lips logo" width="80" height="40" />
         </a>
-
-     
+        <div class="logo cart" id="cart">
+           <img src="/resources/shopping_cart_2_fill (1).svg" alt="">
+           <span class="cart-count">0</span>
+          </div>
       <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill='#fff'><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
       </div>
@@ -34,7 +32,7 @@
       <div class="navBar" id="navBar">
         <a class="navlink" href="index.html">Home</a>
         <a class="navlink active" href="shop.html">Shop</a>
-        <a class="navlink" href="best-sellers.html">Best sellers</a>
+        <a class="navlink" href="cart.html">Cart</a>
         <a class="navlink" href="policy.html">Policy</a>
         <a class="navlink" href="contact.html">Contact</a>
       </div>
@@ -42,11 +40,22 @@
   </header>
 
   <main>
-     <section id="products" class="productsPage" aria-labelledby="products-title">
+    
+
+    <section id="about" class="aboutPage" aria-labelledby="about-title">
       <div class="container">
-        <div>
-          <h3 id="title">Products</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque provident velit, aperiam beatae ex saepe vitae consequatur,<br> minima excepturi facere amet fuga error commodi pariatur sed distinctio mollitia delectus animi.</p>
+        <div class="shop-title">
+          <h2>SHOP TILL YOU DROP</h2>
+          <h5>Our collection is live now</h5>
+        </div>
+        
+      </div>
+    </section>
+    <section id="products" class="productsPage" aria-labelledby="products-title">
+      <div class="container">
+        <div class="product-text">
+          <h3 id="title">shop</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque provident velit, aperiam beatae ex saepe vitae consequatur, minima excepturi facere amet fuga error commodi pariatur sed distinctio mollitia delectus animi.</p>
         </div>
 
         <div class="cardsGrid">

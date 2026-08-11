@@ -48,3 +48,13 @@ const cards = document.querySelectorAll('card');
 
 
 
+// toggle hover
+
+const item = document.querySelector('.item');
+const image = item.querySelector('.unhide');
+
+item.addEventListener('hover', () => {
+  // Toggle a class that changes display from none to block
+  image.classList.toggle('visible');
+});
+
