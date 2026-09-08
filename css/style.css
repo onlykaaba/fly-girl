@@ -15,12 +15,12 @@
   --header-h: 120px;           /* adjust once */
   --bg: #f5f5f5;
   --bg2: #FFD6D1;
-  --ink: #014B43;
+  --ink: #807e81;
   --muted: #3A563D;
-  --muted2: #3D3D3D;
+  --muted2: #363537;
   --pink: #F4A7C1;
   --pink-muted:  #be708a;
-  --nav-bar:#F5EEA6;
+  --nav-bar:#363537;
 
 
   /* spacing */
@@ -94,13 +94,13 @@ h3{
   font-size: clamp(var(--font-size-3), 2vw, var(--font-size-2));
   line-height: 120%;
   font-weight: 700;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 h4{
   font-size: clamp(var(--font-size-1) 5vw var(--font-size-2));
   text-align: left;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   font-weight: 600;
   line-height: 120%;
   
@@ -124,16 +124,11 @@ p{
   font-weight: 400;
   font-family: "Lora", serif;
   line-height: 150%;
+  margin-bottom: var(--space-2);
   
 }
 
-.cardTitle{
-  line-height: 120%;
-  font-size: 14px;
-  font-weight: 500;
-  
-  
-}
+
 
 
 
@@ -199,14 +194,10 @@ header{
 }
 
 .logo{
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
 }
 
-.logo img{
-  width: 100%;
-  height: 100%;
-}
 
 .cart{
   padding: .5rem;
@@ -287,7 +278,6 @@ img {
     max-width: 100%;
     height:100%;
     display: block;
-    margin: 0 auto;
     object-fit: cover;
 }
 
@@ -336,6 +326,7 @@ img {
   transition: background-color .25s ease, color .25s ease;
 }
 
+
 label{
   background-color: var(--ink);
   position: absolute;
@@ -351,7 +342,6 @@ label{
 .backgroundcover{
   position: fixed;
   background-image:  url('/resources/Close-up\ of\ Lips\ in\ Water.png');
-  top: 130px;
   left: 0;
   right: 0;
   background-size: cover;
@@ -366,32 +356,29 @@ label{
 
 
 
-main {
-  height: fit-content;
-  background: linear-gradient(to bottom, transparent 100vh, var(--bg) 40%);
-}
 
 
 
-.container{
+
+.landingPage .container{
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  max-width: 1280px;
-  height: 100%;
+  /* margin: 0 auto; */
   gap: var(--space-3);
-  padding: 0  var(--space-2);
   flex-wrap: wrap;
 }
 
 
 
-section{
-  padding: var(--space-6) 0;
-  height: fit-content;
+
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
+  
+  
 }
-
-
 
 
 
@@ -404,8 +391,6 @@ section{
 
 
 .hero {
-  display: flex;
-  flex-direction: column;
   opacity: 0;
   transform: translateY(20px);
   /* This line makes the change animate instead of snap */
@@ -420,7 +405,9 @@ section{
 
 
 
+
 .landingPage{
+  grid-column: 2 / 3;
   height: 100dvh;
   padding: 0;
   color: var(--bg);
@@ -434,40 +421,41 @@ section{
 
 
 
-
-
-
-
-.about-card{
- background-color: #f5f5f5;
- padding: var(--space-3);
- display: grid;
- grid-template-columns: 1fr 1fr;
- gap: var(--space-2);
- border-radius: 24px;
- align-self: center;
+.aboutPage{
+  grid-column: 2 / 3;
+  background-color: #F5EEA6;
 }
 
-.imageBox{
-  max-height: 320px;
-}
-
-.imageBox img {
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-
-
-
-
-
-.aboutText{
-  display: flex;
-  flex-direction: column;
+.about-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-2);
+  height: 100%;
+  margin: 0 auto;
+  
 }
+
+/* .about-text{
+  height: 100%;
+} */
+
+.about-image {
+  height: 320px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.about-image img{
+  object-fit: cover;
+  width: 100%;
+}
+
+
+
+
+
+
+
 
 
 .item{
@@ -494,12 +482,9 @@ section{
   display: block;
 }
 
-
-
-
-
-
-
+.categoryPage {
+   grid-column: 2 / 3;
+}
 
 .category-container{
   display: grid;
@@ -532,28 +517,13 @@ section{
  }
 
 
-
-
-
-
-
 /* card component */
 
 
 .card{
   background-color: var(--bg2);
   border-radius: 16px;
-}
-
-
-
-.card-container{
-  display: flex;
-  flex-direction: column;
-  gap:var(--space-1);
-  height: 100%;
-  justify-content: space-between;
-  padding:  var(--space-1)  var(--space-1) var(--space-2);
+  padding: var(--space-2);
 }
 
 .cardText{
@@ -563,27 +533,23 @@ section{
 
 
 
-.card-container img {
-  aspect-ratio: 4/3;
-  border-radius: 12px;
+.card-container div{
+  border-radius: 8px;
+  height: 50%;
 }
 
 
 .cardsGrid{
  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- gap: clamp(var(--space-2) , 5vw, var(--space-2));
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: clamp(var(--space-1) , 5vw, var(--space-2));
  height: fit-content;
+
 } 
 
 
 
-.imagewrapper {
-  height: 50dvh;
-  position: relative;
-  background-image: url(/resources/hero\ 3.jpeg);
-  background-position: 50% 50%;
-}
+
 
 .wrapper-text{
   position: absolute;
@@ -592,22 +558,32 @@ section{
   max-width: 800px;
 }
 
+.productsPage {
+  grid-column: 2 / 3;
+  background-color: #291A1F;
+}
 
 
-
-
+.imagewrapper {
+  grid-column: 2 / 3 ;
+  height: 50dvh;
+  position: relative;
+  background-image: url(/resources/hero\ 3.jpeg);
+  background-position: 50% 50%;
+}
 
 
 
 
 /* bestsellers section */
 .bestsellers{
+  grid-column: 2 / 3;
   background-color: #291A1F;
 }
 
 
 .best-sellers-container{
-  display: flex;
+ 
   gap: var(--space-2);
 }
 
@@ -634,10 +610,6 @@ footer{
   display: flex;
 }
 
-.categories{
-  padding: var(--space-2);
-}
-
 
 /* Utilities */
 .noWrap{ white-space:nowrap; }
@@ -648,6 +620,8 @@ footer{
 /* media queries */
 
 @media (max-width: 700px) {
+
+ 
 
   .hamburger{
     display: flex;
@@ -679,9 +653,8 @@ footer{
  }
 
  main {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
   background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
 }
 
@@ -689,8 +662,9 @@ footer{
   top: 0px;
 }
 
- section{
-  padding: var(--space-3) 0;
+
+.about-container{
+   grid-template-columns: 1fr;
 }
 
  .about-card {
@@ -702,8 +676,8 @@ footer{
 
  .cardsGrid{
  display: grid;
- grid-template-columns: repeat(1, 1fr);
- gap: clamp(var(--space-1) , 5vw, var(--space-3));
+ grid-template-columns: repeat(2, 1fr);
+ gap: clamp(var(--space-1) , 5vw, var(--space-1));
  } 
 
  #footer{
@@ -742,9 +716,7 @@ footer{
   transition: background-color 0.7s ease, box-shadow .25s ease;
 }
 
-section{
-   padding: var(--space-4) 0;
-}
+
 
 
 
