@@ -2,6 +2,8 @@ function goToProducts() {
      window.location.href = "#Products";
  }
 
+// navbar animation
+
 const navbar = document.getElementById("navBar");
 
 window.addEventListener("scroll", () => {
@@ -14,22 +16,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-window.addEventListener("DOMContentLoaded", () => {
-  // Check session storage first
- 
-
-    const heroes = document.querySelectorAll(".hero");
-    
-    // Select elements by CLASS (.hero)
-    setTimeout(() => {
-      heroes.forEach(el => {
-        el.classList.add("show");
-      });
-    }, 10);
-
-  
-
-});
 
 
 
@@ -57,4 +43,19 @@ item.addEventListener('hover', () => {
   // Toggle a class that changes display from none to block
   image.classList.toggle('visible');
 });
+
+
+const radius = [23,24,12,45,16,22];
+
+const calculate = function(radius){
+  const output = [];
+  for (let i = 0;
+    i < radius.length;
+    i++
+  ){
+    output.push(radius * 2)
+  }
+  return output;
+
+};
 

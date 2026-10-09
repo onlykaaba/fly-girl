@@ -1,3 +1,10 @@
+
+
+main{
+    height: 100dvh;
+}
+
 .bestsellers{
-    height: 100vh;
+    grid-column: 2 / 3;
+    margin-top: 80px;
 }
