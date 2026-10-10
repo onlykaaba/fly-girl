@@ -52,13 +52,12 @@
 
 body{
   font-family: 'poppins';
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
   min-height: 100dvh;
   background-color: var(--ink);
   color: var(--muted);
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
   
 }
 
@@ -80,6 +79,7 @@ h1 {
   font-weight: 800;
   line-height: 110%; 
   margin-bottom: var(--space-2);
+  width: 100%;
  
 }
 
@@ -103,6 +103,7 @@ h4{
   margin-bottom: var(--space-3);
   font-weight: 400;
   line-height: 120%;
+  width: 100%;
   
 }
 h5{
@@ -166,6 +167,7 @@ a{
 /* components * header */
 
 header{
+  grid-column: span 4;
   position:sticky;
   margin: 0;
   z-index: 1000;
@@ -242,7 +244,7 @@ header{
 
 /* components * Nav */
 
-nav{
+.navcontainer{
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -257,6 +259,7 @@ nav{
 
 .navBar.scrolled{
   background-color: var(--muted2);
+  
   
  
 }
@@ -356,6 +359,7 @@ label{
   display: flex;
   flex-direction: column;
   position: relative;
+  
 
 }
 
@@ -363,16 +367,13 @@ label{
 
 
 main {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-
+ grid-column-start: 2;
+ grid-column-end: 3;
 }
 
 
 
-section {
-  padding: 80px var(--space-2);
-}
+
 
 .container {
   height: fit-content;
@@ -387,12 +388,12 @@ section {
 
 
 .hero {
+  margin-top: auto;
+  margin-bottom: 120px;
   opacity: 1;
-  position: absolute;
-  bottom: 160px;
   transition: opacity 1s ease-out, transform 1s ease-out; 
- 
 }
+
 
 .hero.show {
   opacity: 1;
@@ -411,10 +412,6 @@ section {
 
 
 
-.aboutPage{
-  grid-column: 1 / 4;
-  
-}
 
 .about-container{
   display: grid;
@@ -449,8 +446,8 @@ section {
 
 
 .item{
-  width: 100%;
-  padding: var(--space-3);
+  
+  
   background-color: #F1D29D;
   color: var(--bg);
   cursor: pointer;
@@ -464,7 +461,6 @@ section {
 .unhide{
   width: 100%;
   object-fit: cover;
-  
   display: none;
   overflow: hidden;
 }
@@ -473,20 +469,14 @@ section {
   display: block;
 }
 
-/* .item:hover .unhide{
-  display: block;
-} */
-
 .categoryPage {
-   grid-column: 1 / 4;
+   grid-column: 1 / 6;
 }
 
 .category-container{
   display: grid;
   grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-2);
-
-  
 }
 
 
@@ -542,20 +532,6 @@ section {
   
 }
 
-/* .cardText{
-  display: flex;
-  justify-content: space-between;
-} */
-
-
-
-/* .card-container div{
-  border-radius: 8px;
-  height: 50%;
-} */
-
-
-
 
 
 
@@ -567,15 +543,10 @@ section {
 
 }
 
-.productsPage {
-  grid-column: 1 / 4;
-  
-}
+
 
 
 .imagewrapper {
-  grid-column: 2/ 3;
-  /* background-image: url(/resources/hero\ 3.jpeg); */
   height: 40dvh;
 }
 
@@ -583,20 +554,9 @@ section {
 
 
 /* bestsellers section */
-.bestsellers{
-  grid-column: 1 / 4;
- 
-  
-  
-}
 
 
-.best-sellers-container{
-  display: grid;
-  grid-template-columns: repeat(3,  1fr);
-  gap: var(--space-2);
- 
-}
+
 
 /* .autoshow {
   background-color: #382C30;
@@ -606,6 +566,8 @@ section {
 /* Footer  section*/
 
 footer{
+  grid-column-start: 1;
+  grid-column-end: 4;
   color: var(--bg);
   background-color: #382C30;
   display: flex;
@@ -658,7 +620,10 @@ footer{
   transform: translateX(0); 
   
   }
- 
+
+ main{
+  grid-column: span 4;
+ }
  .navBar{
   display: flex;
   height: 100%;
@@ -667,17 +632,14 @@ footer{
 
 
  main {
-  display: grid;
-  grid-template-columns: 1fr ;
+ 
   background: linear-gradient(to bottom, transparent 100vh, var(--bg) 20%);
  }
 
 section {
   padding: 40px var(--space-2);
 }
-.landingPage {
-  grid-column: span 4;
-}
+
 
 .hero.show {
   
@@ -685,9 +647,6 @@ section {
 }
 
 
-.aboutPage {
-  grid-column: span 4;
-}
 
 
 
@@ -698,17 +657,10 @@ section {
    grid-template-columns: 1fr;
 }
 
-.categoryPage {
-  grid-column: span 4;
-}
 
-.productsPage {
-  grid-column: span 4;
-}
 
-.bestsellers {
-  grid-column:  span 4;
-}
+
+
 
  .about-card {
   display: flex;
@@ -732,7 +684,7 @@ section {
 .best-sellers-container{
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  
 }
 
 .footer-container {
